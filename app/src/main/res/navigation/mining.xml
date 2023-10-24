@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mining"
+    app:startDestination="@id/miningFragment">
+
+    <fragment
+        android:id="@+id/miningFragment"
+        android:name="com.wallet.pools.presentation.screen.tabMining.MiningFragment"
+        android:label="Mining Fragment"
+        tools:layout="@layout/fragment_tab_mining">
+
+    </fragment>
+
+</navigation>
