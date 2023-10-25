@@ -42,20 +42,35 @@
     <color name="color_text_gray1">#575961</color>
 
     <color name="color_bg_card_gray">#f5f5f5</color>
+    <color name="color_bg_EEEEEE">#EEEEEE</color>
+    <color name="color_F88805">#26F88805</color>
 
 
 
     <color name="color_text_2d2d2d">#2D2D2D</color>
 
     <color name="color_text_525252">#525252</color>
+    <color name="color_text_535353">#535353</color>
 
     <color name="color_text_8f8f8f">#8F8F8F</color>
+    <color name="color_text_336BFE">#336BFE</color>
 
     <color name="color_text_ee5151">#ee5151</color>
 
     <color name="color_8f8f8f">#8F8F8F</color>
     <color name="color_d1d1d1">#D1D1D1</color>
+    <color name="color_B0B0B0">#B0B0B0</color>
 
+    <color name="color_text_black">#000000</color>
+    <color name="color_text_white">#ffffff</color>
+    <color name="color_text_B0B0B0">#B0B0B0</color>
+    <color name="color_text_757575">#757575</color>
+
+    <color name="color_text_9E9E9E">#9E9E9E</color>
+    <color name="color_text_212121">#212121</color>
+    <color name="color_text_343434">#343434</color>
+    <color name="color_text_06C270">#06C270</color>
+    <color name="color_text_484848">#B5484848</color>
 
 
     <color name="bg_app_white">#ffffff</color>
@@ -65,6 +80,12 @@
 
     <color name="color_ee5151">#EE5151</color>
     <color name="color_1ccc82">#1CCC82</color>
+    <color name="color_E6D6FF">#E6D6FF</color>
+    <color name="color_FFD6AD">#FFD6AD</color>
+    <color name="color_06C270">#06C270</color>
+    <color name="color_336BFE">#336BFE</color>
+    <color name="color_E5F4EE">#E5F4EE</color>
+
 
     <!--    <color name="color_20242F">#20242F</color>-->
 

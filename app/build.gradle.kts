@@ -112,4 +112,7 @@ dependencies {
     //moshi
     implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
 
+    // Circle Image View
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
 }

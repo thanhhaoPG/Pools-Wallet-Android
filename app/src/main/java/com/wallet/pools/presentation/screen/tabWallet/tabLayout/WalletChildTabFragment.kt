@@ -1,27 +1,27 @@
-package com.wallet.pools.presentation.screen.tabWallet
+package com.wallet.pools.presentation.screen.tabWallet.tabLayout
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import com.google.android.material.tabs.TabLayoutMediator
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
-import com.wallet.pools.databinding.FragmentTabMarketBinding
 import com.wallet.pools.databinding.FragmentTabWalletBinding
+import com.wallet.pools.databinding.FragmentWalletChildTabBinding
 import com.wallet.pools.presentation.screen.main.MainActivity
-import com.wallet.pools.presentation.screen.tabWallet.tabLayout.WalletViewPagetAdapter
+import com.wallet.pools.presentation.screen.tabWallet.WalletViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
+
 @AndroidEntryPoint
-class WalletFragment : BaseFragment<FragmentTabWalletBinding, BaseViewModel>() {
+class WalletChildTabFragment : BaseFragment<FragmentWalletChildTabBinding, BaseViewModel>() {
 
 
     override val viewModel: WalletViewModel by viewModels()
 
 
-    override fun getViewBinding(): FragmentTabWalletBinding =
-        FragmentTabWalletBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentWalletChildTabBinding =
+        FragmentWalletChildTabBinding.inflate(layoutInflater)
 
     override fun onBackFragment() {
 
@@ -48,17 +48,6 @@ class WalletFragment : BaseFragment<FragmentTabWalletBinding, BaseViewModel>() {
     }
 
     private fun initView() {
-        binding.apply {
-            viewPaperWallet.adapter = WalletViewPagetAdapter(requireActivity())
-            TabLayoutMediator(tabLayout,viewPaperWallet){ tab , position ->
-                tab.text = when(position){
-                    0->"Wallet"
-                    1->"NFTs"
-                    else -> ""
-                }
-            }.attach()
-        }
-
 
 
     }
