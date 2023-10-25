@@ -18,9 +18,8 @@
         android:theme="@style/Theme.PoolsWallet"
         tools:targetApi="31">
 
-
         <activity
-            android:name=".presentation.screen.main.MainActivity"
+            android:name=".presentation.screen.first.FirstActivity"
             android:configChanges="orientation|screenSize|uiMode"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -30,6 +29,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.screen.main.MainActivity"
+            android:configChanges="orientation|screenSize|uiMode"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>

@@ -62,6 +62,7 @@ android {
         // If set to true, lint also checks all dependencies as part of its analysis.
         // Recommended for projects consisting of an app with library dependencies.
         checkDependencies = true
+        checkReleaseBuilds = true
 
 
     }
@@ -111,5 +112,8 @@ dependencies {
 
     //moshi
     implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
+
+    //security
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
 
 }
