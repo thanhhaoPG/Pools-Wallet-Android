@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Pools Wallet</string>
+    <string name="connections">CONNECTIONS</string>
+    <string name="account">ACCOUNT</string>
+    <string name="security_amp_privacy"><![CDATA[SECURITY & PRIVACY]]></string>
+    <string name="pools_wallet_information">POOLS WALLET INFORMATION</string>
 </resources>
