@@ -51,7 +51,7 @@ class WebViewFragment : BaseFragment<FragmentWebViewBinding, BaseViewModel>() {
 
     private fun initView() {
         binding.apply {
-            customWebView.setData(args.linkURL,args.nameTitle)
+           // customWebView.setData(args.linkURL,args.nameTitle)
 
         }
 

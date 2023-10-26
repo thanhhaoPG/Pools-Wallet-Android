@@ -127,6 +127,6 @@ dependencies {
     implementation ("com.google.zxing:core:3.3.0")
 
     //PDF
-    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
+//    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
 
 }
