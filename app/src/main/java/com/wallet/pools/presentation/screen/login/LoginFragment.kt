@@ -1,24 +1,29 @@
 package com.wallet.pools.presentation.screen.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
+import com.wallet.pools.databinding.FragmentLoginBinding
 import com.wallet.pools.databinding.FragmentTabMarketBinding
+import com.wallet.pools.presentation.screen.createNewWallet.CreatNewWalletFragment
 import com.wallet.pools.presentation.screen.main.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment<FragmentTabMarketBinding, BaseViewModel>() {
+class LoginFragment : BaseFragment<FragmentLoginBinding, BaseViewModel>() {
 
 
     override val viewModel: LoginViewModel by viewModels()
 
 
-    override fun getViewBinding(): FragmentTabMarketBinding =
-        FragmentTabMarketBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentLoginBinding =
+        FragmentLoginBinding.inflate(layoutInflater)
 
     override fun onBackFragment() {
 
@@ -41,7 +46,14 @@ class LoginFragment : BaseFragment<FragmentTabMarketBinding, BaseViewModel>() {
     }
 
     private fun initView() {
-
+        binding.apply {
+            llCreateWallet.setOnClickListener {
+                findNavController().navigate(R.id.creatNewWalletFragment)
+            }
+            tvImportWallet.setOnClickListener {
+                findNavController().navigate(R.id.importWalletFragment)
+            }
+        }
 
     }
 

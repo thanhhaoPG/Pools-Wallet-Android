@@ -4,4 +4,7 @@
     <string name="account">ACCOUNT</string>
     <string name="security_amp_privacy"><![CDATA[SECURITY & PRIVACY]]></string>
     <string name="pools_wallet_information">POOLS WALLET INFORMATION</string>
+    <string name="i_have_read_and_agree_to_the_term_of_service_and_privacy_policy">I have read and agree to the Term of service and Privacy policy</string>
+    <string name="create_a_new_wallet">Create a new Wallet</string>
+    <string name="text1">\@</string>
 </resources>

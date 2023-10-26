@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id ("androidx.navigation.safeargs")
 }
 
 android {
@@ -119,5 +120,13 @@ dependencies {
     
     // Circle Image View
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    //Scan QRCode
+    implementation ("com.github.yuriy-budiyev:code-scanner:2.3.2")
+    implementation("com.journeyapps:zxing-android-embedded:4.3.0") { var transitive = false }
+    implementation ("com.google.zxing:core:3.3.0")
+
+    //PDF
+    implementation ("com.github.barteksc:android-pdf-viewer:2.8.2")
 
 }

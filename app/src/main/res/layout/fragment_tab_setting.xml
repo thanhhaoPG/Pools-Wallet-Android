@@ -492,7 +492,7 @@
             <RelativeLayout
                 android:padding="@dimen/dimen5dp"
                 android:id="@+id/rltAssistant"
-                android:layout_margin="@dimen/dimen10dp"
+                android:layout_marginHorizontal="@dimen/dimen10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView

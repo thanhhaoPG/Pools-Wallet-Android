@@ -13,5 +13,47 @@
         tools:layout="@layout/fragment_login">
 
     </fragment>
+    <fragment
+        android:id="@+id/creatNewWalletFragment"
+        android:name="com.wallet.pools.presentation.screen.createNewWallet.CreatNewWalletFragment"
+        android:label="CreatNewWalletFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/importWalletFragment"
+        android:name="com.wallet.pools.presentation.screen.importWallet.ImportWalletFragment"
+        android:label="ImportWalletFragment" />
+    <fragment
+        android:id="@+id/privateKeyChildTabFragment"
+        android:name="com.wallet.pools.presentation.screen.importWallet.tabLayout.PrivateKeyChildTabFragment"
+        android:label="PrivateKeyChildTabFragment" />
+    <fragment
+        android:id="@+id/recoveryPhraseChildTabFragment"
+        android:name="com.wallet.pools.presentation.screen.importWallet.tabLayout.RecoveryPhraseChildTabFragment"
+        android:label="RecoveryPhraseChildTabFragment" />
+    <fragment
+        android:id="@+id/pinFragment"
+        android:name="com.wallet.pools.presentation.screen.pin.PinFragment"
+        android:label="PinFragment" />
+    <fragment
+        android:id="@+id/scanQRFragment"
+        android:name="com.wallet.pools.presentation.screen.scanQR.ScanQRFragment"
+        android:label="ScanQRFragment" />
+    <fragment
+        android:id="@+id/confirmPinFragment"
+        android:name="com.wallet.pools.presentation.screen.confirmPin.ConfirmPinFragment"
+        android:label="ConfirmPinFragment" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.wallet.pools.presentation.screen.webView.WebViewFragment"
+        android:label="WebViewFragment" >
+        <argument
+            android:name="nameTitle"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="linkURL"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
 </navigation>
 

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white">
+    android:background="@color/color_white_bg">
     <LinearLayout
         android:id="@+id/llCardViewTop"
         android:layout_width="match_parent"
@@ -74,6 +74,7 @@
             <ImageView
                 android:layout_width="@dimen/dimen25dp"
                 android:layout_height="@dimen/dimen25dp"
+                app:tint="@color/black"
                 android:src="@drawable/ic_receive"/>
             <com.wallet.pools.presentation.widget.TvRegular
                 android:layout_width="wrap_content"
@@ -95,6 +96,7 @@
             <ImageView
                 android:layout_width="@dimen/dimen25dp"
                 android:layout_height="@dimen/dimen25dp"
+                app:tint="@color/black"
                 android:src="@drawable/ic_send"/>
             <com.wallet.pools.presentation.widget.TvRegular
                 android:layout_width="wrap_content"
@@ -172,6 +174,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:tint="@color/color_text_535353"
             android:src="@drawable/ic_allow"/>
     </LinearLayout>
     <com.google.android.material.tabs.TabLayout

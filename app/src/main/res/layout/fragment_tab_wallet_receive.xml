@@ -73,17 +73,28 @@
           </LinearLayout>
       </LinearLayout>
    </LinearLayout>
-    <Button
+    <LinearLayout
+        android:id="@+id/llConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Share"
-        android:padding="@dimen/dimen10dp"
+        android:padding="@dimen/dimen15dp"
+        android:layout_marginTop="@dimen/text_size_10"
         android:textSize="@dimen/text_size_16"
+        android:gravity="center"
+        android:layout_marginHorizontal="@dimen/space_start_end"
         android:fontFamily="@font/poppins_semi_bold"
         android:textAllCaps="false"
-        android:layout_marginHorizontal="@dimen/space_start_end"
+        android:backgroundTint="@color/color_button_06C270"
         android:background="@drawable/bg_linear_conner_radius_gray"
         android:layout_marginBottom="@dimen/dimen20dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal" >
+        <com.wallet.pools.presentation.widget.TvSemiBold
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            android:text="Share "/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

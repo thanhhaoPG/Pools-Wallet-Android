@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <color name="color_button_06C270">#282C63</color>
+    <color name="color_E6D6FF">#505071</color>
+    <color name="color_FFD6AD">#505071</color>
+    <color name="color_336BFE">#505071</color>
+    <color name="color_06C270">#505071</color>
+    <color name="color_app">#BCBCFF</color>
+    <color name="black">#ffffff</color>
+    <color name="color_text_black">#ffffff</color>
+    <color name="color_white_bg">#7272E4</color>
+    <color name="color_bg_card_gray">#282C63</color>
+    <color name="color_text_535353">#CFCFCF</color>
+</resources>

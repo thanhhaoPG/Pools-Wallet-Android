@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_marginEnd="@dimen/space_start_end"
+        android:id="@+id/rltTop"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/frmBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:paddingHorizontal="@dimen/space_start_end">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen24dp"
+                android:layout_height="@dimen/dimen24dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/baseline_keyboard_arrow_left_24" />
+        </FrameLayout>
+
+
+        <com.wallet.pools.presentation.widget.TvSemiBold
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            tools:text="Title Name"
+            android:textColor="@color/color_text_2d2d2d"
+            android:textSize="@dimen/text_size_16"
+            />
+    </RelativeLayout>
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
