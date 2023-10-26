@@ -3,6 +3,8 @@ package com.wallet.pools.presentation.screen.tabSetting
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentTabMarketBinding
@@ -46,7 +48,11 @@ class SettingFragment : BaseFragment<FragmentTabSettingBinding, BaseViewModel>()
     }
 
     private fun initView() {
-
+        binding.apply {
+            rltTheme.setOnClickListener {
+                findNavController().navigate(R.id.settingThemeFragment)
+            }
+        }
 
     }
 

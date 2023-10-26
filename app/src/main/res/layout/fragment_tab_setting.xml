@@ -519,6 +519,42 @@
                     android:layout_centerVertical="true"
                     />
             </RelativeLayout>
+            <View
+                android:layout_marginHorizontal="@dimen/dimen10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_B0B0B0"
+                />
+            <RelativeLayout
+                android:padding="@dimen/dimen5dp"
+                android:id="@+id/rltTheme"
+                android:layout_margin="@dimen/dimen10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ivTheme"
+                    android:layout_centerVertical="true"
+                    android:layout_width="@dimen/dimen17dp"
+                    android:layout_height="@dimen/dimen17dp"
+                    android:src="@drawable/ic_language"/>
+                <com.wallet.pools.presentation.widget.TvRegular
+                    android:id="@+id/tvTheme"
+                    android:layout_toRightOf="@+id/ivTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dimen10dp"
+                    android:textSize="@dimen/text_size_14"
+                    android:textColor="@color/color_text_black"
+                    android:text="Theme"/>
+                <ImageView
+                    android:id="@+id/ivAllowTheme"
+                    android:layout_centerVertical="true"
+                    android:layout_width="@dimen/dimen10dp"
+                    android:layout_height="@dimen/dimen10dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_allow"/>
+            </RelativeLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -7,6 +7,7 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.wallet.pools.R
@@ -14,8 +15,10 @@ import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentLoginBinding
 import com.wallet.pools.databinding.FragmentPinViewBinding
+import com.wallet.pools.extenstion.showToast
 import com.wallet.pools.presentation.screen.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class PinFragment : BaseFragment<FragmentPinViewBinding, BaseViewModel>() {
@@ -29,7 +32,7 @@ class PinFragment : BaseFragment<FragmentPinViewBinding, BaseViewModel>() {
 
     override fun onBackFragment() {
 
-        findNavController().navigateUp()
+        findNavController().navigate(R.id.loginFragment)
 
     }
 
@@ -90,7 +93,9 @@ class PinFragment : BaseFragment<FragmentPinViewBinding, BaseViewModel>() {
             }
 
             if (it.size == 6) {
-                findNavController().navigate(R.id.confirmPinFragment)
+                val pin = viewModel.pinStack.value.toString()
+                val bundle  = bundleOf("pin" to pin)
+                findNavController().navigate(R.id.confirmPinFragment,bundle)
 
             }
         }

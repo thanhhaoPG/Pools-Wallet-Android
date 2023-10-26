@@ -11,4 +11,10 @@
     <color name="color_white_bg">#7272E4</color>
     <color name="color_bg_card_gray">#282C63</color>
     <color name="color_text_535353">#CFCFCF</color>
+    <color name="color_text_2d2d2d">#FFFFFF</color>
+    <color name="color_text_525252">#FFFFFF</color>
+    <color name="color_F5F5F5">#515151</color>
+    <color name="color_text_343434">#ffffff</color>
+    <color name="color_text_757575">#CFCFCF</color>
+
 </resources>

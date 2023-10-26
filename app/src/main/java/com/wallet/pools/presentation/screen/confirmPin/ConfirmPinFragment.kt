@@ -1,5 +1,6 @@
 package com.wallet.pools.presentation.screen.confirmPin
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -8,27 +9,32 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
+import com.wallet.pools.databinding.FragmentConfirmPinBinding
 import com.wallet.pools.databinding.FragmentPinViewBinding
+import com.wallet.pools.extenstion.showToast
+import com.wallet.pools.presentation.screen.main.MainActivity
 import com.wallet.pools.presentation.screen.pin.PinViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class ConfirmPinFragment : BaseFragment<FragmentPinViewBinding, BaseViewModel>() {
+class ConfirmPinFragment : BaseFragment<FragmentConfirmPinBinding, BaseViewModel>() {
 
 
     override val viewModel: PinViewModel by viewModels()
     private lateinit var pinDisplays: ArrayList<ImageView>
     private lateinit var pinButtons: ArrayList<Button>
-    override fun getViewBinding(): FragmentPinViewBinding =
-        FragmentPinViewBinding.inflate(layoutInflater)
+    private val args : ConfirmPinFragmentArgs by navArgs()
+    override fun getViewBinding(): FragmentConfirmPinBinding =
+        FragmentConfirmPinBinding.inflate(layoutInflater)
 
     override fun onBackFragment() {
 
-        findNavController().navigateUp()
+        findNavController().navigate(R.id.pinFragment)
 
     }
 
@@ -47,6 +53,9 @@ class ConfirmPinFragment : BaseFragment<FragmentPinViewBinding, BaseViewModel>()
     }
 
     private fun initView() {
+        binding.frmBack.setOnClickListener {
+            onBackFragment()
+        }
         pinDisplays = buildArray {
             add(binding.pinDisplay1)
             add(binding.pinDisplay2)
@@ -86,9 +95,12 @@ class ConfirmPinFragment : BaseFragment<FragmentPinViewBinding, BaseViewModel>()
             }
 
             if (it.size == 6) {
-
-                Toast.makeText(requireContext(),"Đã nhập đủ : ${viewModel.pinStack.value}", Toast.LENGTH_SHORT).show()
-
+                if(args.pin == viewModel.pinStack.value!!.toString()){
+                   findNavController().navigate(R.id.textPhraseFragment)
+                }else {
+                    requireActivity().showToast("Nhập sai Vui lòng nhập lại ")
+                    viewModel.clearPin()
+                }
             }
         }
     }

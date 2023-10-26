@@ -74,44 +74,44 @@
 
                 <ImageView
                     android:id="@+id/pinDisplay1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
+                    android:layout_width="@dimen/dimen12dp"
+                    android:layout_height="@dimen/dimen12dp"
+                    android:layout_marginHorizontal="@dimen/dimen12dp"
                     android:src="@drawable/pin_empty" />
 
                 <ImageView
                     android:id="@+id/pinDisplay2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
+                    android:layout_width="@dimen/dimen12dp"
+                    android:layout_height="@dimen/dimen12dp"
+                    android:layout_marginHorizontal="@dimen/dimen12dp"
                     android:src="@drawable/pin_empty" />
 
                 <ImageView
                     android:id="@+id/pinDisplay3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
+                    android:layout_width="@dimen/dimen12dp"
+                    android:layout_height="@dimen/dimen12dp"
+                    android:layout_marginHorizontal="@dimen/dimen12dp"
                     android:src="@drawable/pin_empty" />
 
                 <ImageView
                     android:id="@+id/pinDisplay4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
+                    android:layout_width="@dimen/dimen12dp"
+                    android:layout_height="@dimen/dimen12dp"
+                    android:layout_marginHorizontal="@dimen/dimen12dp"
                     android:src="@drawable/pin_empty" />
 
                 <ImageView
                     android:id="@+id/pinDisplay5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
+                    android:layout_width="@dimen/dimen12dp"
+                    android:layout_height="@dimen/dimen12dp"
+                    android:layout_marginHorizontal="@dimen/dimen12dp"
                     android:src="@drawable/pin_empty" />
 
                 <ImageView
                     android:id="@+id/pinDisplay6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="8dp"
+                    android:layout_width="@dimen/dimen12dp"
+                    android:layout_height="@dimen/dimen12dp"
+                    android:layout_marginHorizontal="@dimen/dimen12dp"
                     android:src="@drawable/pin_empty" />
 
             </LinearLayout>

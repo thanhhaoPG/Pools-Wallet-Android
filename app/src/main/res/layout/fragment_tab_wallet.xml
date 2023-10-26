@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/color_white_bg">
+    xmlns:tools="http://schemas.android.com/tools">
     <LinearLayout
         android:id="@+id/llCardViewTop"
         android:layout_width="match_parent"

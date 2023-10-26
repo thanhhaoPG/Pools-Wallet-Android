@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_margin="@dimen/dimen10dp"
+    android:gravity="center"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content">
+    <com.wallet.pools.presentation.widget.TvRegular
+        android:id="@+id/tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_text_black"
+        android:text="1."/>
+    <LinearLayout
+        android:id="@+id/llFillText"
+        android:background="@drawable/bg_radius_conner_graph_gray"
+        android:layout_width="@dimen/dimen100dp"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/dimen5dp"
+        android:layout_height="@dimen/dimen40dp">
+        <TextView
+            android:id="@+id/tvFillTextPhrase"
+            android:layout_width="wrap_content"
+            android:textColor="@color/color_text_black"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/dimen10dp"
+            tools:text=""/>
+    </LinearLayout>
+</LinearLayout>

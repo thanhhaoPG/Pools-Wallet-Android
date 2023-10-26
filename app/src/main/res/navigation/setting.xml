@@ -12,5 +12,9 @@
         tools:layout="@layout/fragment_tab_setting">
 
     </fragment>
+    <fragment
+        android:id="@+id/settingThemeFragment"
+        android:name="com.wallet.pools.presentation.screen.settingTheme.SettingThemeFragment"
+        android:label="SettingThemeFragment" />
 
 </navigation>

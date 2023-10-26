@@ -41,7 +41,11 @@
     <fragment
         android:id="@+id/confirmPinFragment"
         android:name="com.wallet.pools.presentation.screen.confirmPin.ConfirmPinFragment"
-        android:label="ConfirmPinFragment" />
+        android:label="ConfirmPinFragment" >
+        <argument
+            android:name="pin"
+            app:argType="string"/>
+    </fragment>
     <fragment
         android:id="@+id/webViewFragment"
         android:name="com.wallet.pools.presentation.screen.webView.WebViewFragment"
@@ -55,5 +59,9 @@
             app:argType="string"
             android:defaultValue="" />
     </fragment>
+    <fragment
+        android:id="@+id/textPhraseFragment"
+        android:name="com.wallet.pools.presentation.screen.textPhraseFragment.TextPhraseFragment"
+        android:label="TextPhraseFragment" />
 </navigation>
 

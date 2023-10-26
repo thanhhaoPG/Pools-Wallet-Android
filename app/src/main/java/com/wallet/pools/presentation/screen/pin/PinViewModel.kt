@@ -38,5 +38,9 @@ class PinViewModel @Inject constructor(
         if (newStack.isNotEmpty()) newStack.pop()
         return newStack
     }
+    fun clearPin(){
+        val newStack = Stack<Int>()
+        _pinStack.value =  newStack
+    }
 
 }
