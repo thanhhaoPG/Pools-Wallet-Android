@@ -1,6 +1,7 @@
 package com.wallet.pools
 
 import android.app.Application
+import com.wallet.pools.util.ReleaseTree
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -19,7 +20,14 @@ class MyApplication : Application() {
         instance = this
         super.onCreate()
 
-        Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG)
+        {
+            Timber.plant(Timber.DebugTree())
+        }
+        else
+        {
+            Timber.plant(ReleaseTree())
+        }
 
 
     }
