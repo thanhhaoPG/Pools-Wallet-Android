@@ -3,10 +3,12 @@ package com.wallet.pools.presentation.screen.tabMarket
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import com.google.android.material.tabs.TabLayoutMediator
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentTabMarketBinding
 import com.wallet.pools.presentation.screen.main.MainActivity
+import com.wallet.pools.presentation.screen.tabMarket.tabLayout.MarketViewPaperAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -45,7 +47,16 @@ class MarketFragment : BaseFragment<FragmentTabMarketBinding, BaseViewModel>() {
     }
 
     private fun initView() {
-
+        binding.apply {
+            viewPaperMarket.adapter = MarketViewPaperAdapter(requireActivity())
+            TabLayoutMediator(tabLayoutMarket,viewPaperMarket){ tab , position ->
+                tab.text = when(position){
+                    0->"Watch Market"
+                    1->"New"
+                    else -> ""
+                }
+            }.attach()
+        }
 
     }
 

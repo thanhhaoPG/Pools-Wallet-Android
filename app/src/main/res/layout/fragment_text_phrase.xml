@@ -29,7 +29,7 @@
         tools:itemCount="12"
         android:layout_height="wrap_content"/>
     <LinearLayout
-        android:id="@+id/llCreatePin"
+        android:id="@+id/llConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/dimen10dp"

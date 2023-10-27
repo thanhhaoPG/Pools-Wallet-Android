@@ -1,5 +1,6 @@
 package com.wallet.pools.presentation.screen.textPhraseFragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -11,6 +12,7 @@ import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentTextPhraseBinding
 import com.wallet.pools.databinding.FragmentWebViewBinding
+import com.wallet.pools.presentation.screen.main.MainActivity
 import com.wallet.pools.presentation.screen.tabWallet.WalletViewModel
 import com.wallet.pools.presentation.screen.textPhraseFragment.adapter.ChooseTextPhraseAdapter
 import com.wallet.pools.presentation.screen.textPhraseFragment.adapter.FillTextPhraseAdapter
@@ -65,6 +67,10 @@ class TextPhraseFragment : BaseFragment<FragmentTextPhraseBinding, BaseViewModel
 
     private fun initView() {
         binding.apply {
+            llConfirm.setOnClickListener {
+                val intent = Intent(context , MainActivity::class.java)
+                requireContext().startActivity(intent)
+            }
             rvTextPhrase.apply {
                 adapter = fillTextPhraseAdapter
                 layoutManager = GridLayoutManager(context,2)
@@ -113,6 +119,7 @@ class TextPhraseFragment : BaseFragment<FragmentTextPhraseBinding, BaseViewModel
             }
 
         }
+
 
 
 

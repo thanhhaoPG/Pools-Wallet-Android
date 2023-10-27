@@ -96,6 +96,8 @@ dependencies {
 
     //Glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation("io.coil-kt:coil:2.4.0")
+    implementation("io.coil-kt:coil-svg:2.4.0")
 
     //lottie-android
     implementation ("com.airbnb.android:lottie:6.1.0")
@@ -137,5 +139,8 @@ dependencies {
 
     // WebKit - for WebView Dark Mode
     implementation ("androidx.webkit:webkit:1.8.0")
+
+    //Paging
+    implementation ("androidx.paging:paging-runtime-ktx:3.2.0")
 
 }
