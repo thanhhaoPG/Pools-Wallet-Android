@@ -108,6 +108,7 @@ dependencies {
 
     //retrofit2
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-moshi:2.9.0")
 
     //okhttp3
     implementation  ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
@@ -129,5 +130,12 @@ dependencies {
 
     //PDF
     implementation ("com.github.afreakyelf:Pdf-Viewer:v1.0.7")
+
+    // ReactiveX
+    implementation ("io.reactivex.rxjava2:rxjava:2.2.21")
+    implementation ("io.reactivex.rxjava2:rxandroid:2.1.1")
+
+    // WebKit - for WebView Dark Mode
+    implementation ("androidx.webkit:webkit:1.8.0")
 
 }
