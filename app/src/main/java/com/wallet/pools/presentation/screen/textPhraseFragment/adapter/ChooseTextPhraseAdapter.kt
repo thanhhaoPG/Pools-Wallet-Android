@@ -1,5 +1,6 @@
 package com.wallet.pools.presentation.screen.textPhraseFragment.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -69,15 +70,8 @@ class ChooseTextPhraseAdapter @Inject constructor(
             }
 
             itemView.setOnClickListener {
-                val indexSelected = list.indexOfFirst { it.isSelected }
-                if(indexSelected != -1 ){
-                    list[indexSelected].isSelected = false
-                    notifyItemChanged(indexSelected)
-                }
-                list[position].isSelected = true
-                notifyItemChanged(position)
                 onClickChooseTextListener?.let {
-                    it(list)
+                    it(item)
                 }
             }
         }

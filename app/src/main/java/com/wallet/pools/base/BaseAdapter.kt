@@ -30,7 +30,7 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
     protected var onItemClickListener: ((T) -> Unit)? = null
 
     protected var onClickFillTextListener: ((List<T>) -> Unit)? = null
-    protected var onClickChooseTextListener: ((List<T>) -> Unit)? = null
+    protected var onClickChooseTextListener: ((T)-> Unit)? = null
 
 
     fun setItemClickListener(listener: (T) -> Unit) {
@@ -39,7 +39,7 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHolder>() 
     fun setClickFillTextListener(listener: (List<T>) -> Unit) {
         onClickFillTextListener = listener
     }
-    fun setClickChooseTextListener(listener: (List<T>) -> Unit) {
+    fun setClickChooseTextListener(listener: (T) -> Unit) {
         onClickChooseTextListener = listener
     }
 

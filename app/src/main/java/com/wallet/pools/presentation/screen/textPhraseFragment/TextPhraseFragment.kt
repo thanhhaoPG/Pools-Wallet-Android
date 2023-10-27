@@ -1,6 +1,7 @@
 package com.wallet.pools.presentation.screen.textPhraseFragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -45,8 +46,9 @@ class TextPhraseFragment : BaseFragment<FragmentTextPhraseBinding, BaseViewModel
 
     }
 
-    val listFakeData = ArrayList<TextPhrase>()
-    val listEmptyData = ArrayList<TextPhrase>()
+    private val listFakeData = ArrayList<TextPhrase>()
+    private var listEmptyData = ArrayList<TextPhrase>()
+    private var positionAdd = 0
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -84,20 +86,32 @@ class TextPhraseFragment : BaseFragment<FragmentTextPhraseBinding, BaseViewModel
             listEmptyData.add(TextPhrase("",false))
             listEmptyData.add(TextPhrase("",false))
 
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
-            listFakeData.add(TextPhrase("",false))
+            listFakeData.add(TextPhrase("1",false))
+            listFakeData.add(TextPhrase("2",false))
+            listFakeData.add(TextPhrase("3",false))
+            listFakeData.add(TextPhrase("4",false))
+            listFakeData.add(TextPhrase("5",false))
+            listFakeData.add(TextPhrase("6",false))
+            listFakeData.add(TextPhrase("7",false))
+            listFakeData.add(TextPhrase("8",false))
+            listFakeData.add(TextPhrase("9",false))
+            listFakeData.add(TextPhrase("10",false))
+            listFakeData.add(TextPhrase("11",false))
+            listFakeData.add(TextPhrase("12",false))
             fillTextPhraseAdapter.list  = listEmptyData
             chooseTextPhraseAdapter.list = listFakeData
+        }
+
+        chooseTextPhraseAdapter.setClickChooseTextListener {
+            if(!it.isSelected){
+                it.isSelected = true
+                listEmptyData.removeAt(positionAdd)
+                listEmptyData.add(positionAdd,it)
+                fillTextPhraseAdapter.list = listEmptyData
+                positionAdd++
+                fillTextPhraseAdapter.notifyDataSetChanged()
+            }
+
         }
 
 
