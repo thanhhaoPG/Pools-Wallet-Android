@@ -61,7 +61,7 @@ class FillTextPhraseAdapter @Inject constructor(
         override fun bind(item: TextPhrase) {
             binding.apply {
                 tvFillTextPhrase.text = item.text
-                tvNumber.text = position.toString()
+                tvNumber.text = (position + 1).toString()
                 if(item.isSelected){
                     llFillText.background = ContextCompat.getDrawable(itemView.context,R.drawable.bg_radius_conner_graph_green)
                 }else {
@@ -69,13 +69,6 @@ class FillTextPhraseAdapter @Inject constructor(
                 }
             }
             itemView.setOnClickListener {
-                val indexSelected = list.indexOfFirst { it.isSelected }
-                if(indexSelected != -1 ){
-                    list[indexSelected].isSelected = false
-                    notifyItemChanged(indexSelected)
-                }
-                list[position].isSelected = true
-                notifyItemChanged(position)
                 onClickFillTextListener?.let {
                     it(list)
                 }
