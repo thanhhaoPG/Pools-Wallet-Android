@@ -1,30 +1,29 @@
 package com.wallet.pools.presentation.screen.tabMarket.tabLayout
 
-import android.R
+import android.content.res.ColorStateList
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.ColorFilter
+import android.graphics.Paint
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
-import android.graphics.drawable.PictureDrawable
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import coil.ImageLoader
-import coil.decode.SvgDecoder
-import coil.disk.DiskCache
-import coil.memory.MemoryCache
-import coil.request.CachePolicy
-import coil.request.ImageRequest
-import coil.size.ViewSizeResolver
 import com.airo.playground.base.BaseAdapterPaging
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.model.StreamEncoder
+import com.wallet.pools.R
 import com.wallet.pools.databinding.ItemWatchMaketBinding
 import com.wallet.pools.domain.model.Daum
-import java.io.InputStream
+import com.wallet.pools.lib.loadSVG.GlideToVectorYou
+import com.wallet.pools.lib.loadSVG.GlideToVectorYouListener
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -48,17 +47,53 @@ class WatchMarketPagingAdapter @Inject constructor() :
                 tvNameWallet.text = item.name
                 tvTypeWallet.text = item.symbol
                 tvCountPoint.text = item.quote.price.toInt().toString()
-                tvCountMoney.text =  item.quote.percentChange1h.toString()
-//                ivChart.loadUrl(item.miniChart)
+                tvCountMoney.text = item.quote.percentChange1h.toString()
+
+                GlideToVectorYou
+                    .init()
+                    .with(root.context)
+                    .withListener(object : GlideToVectorYouListener {
+                        override fun onLoadFailed() {
+                            Timber.i("HAOHAO  GlideToVectorYouListener onLoadFailed $bindingAdapterPosition")
+                        }
+
+                        override fun onResourceReady() {
+
+                            Timber.i("HAOHAO  GlideToVectorYouListener onResourceReady $bindingAdapterPosition")
+
+                            binding.ivChart.post {
+
+                                val paint = Paint()
+
+                                if(item.quote.percentChange7d<0){ //chart red
+                                    paint.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(root.context, R.color.color_chart_red), PorterDuff.Mode.SRC_ATOP)
+                                    ivChart.setLayerPaint(paint)
+                                }else{// chart green
+                                    paint.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(root.context, R.color.color_chart_green), PorterDuff.Mode.SRC_ATOP)
+                                    ivChart.setLayerPaint(paint)
+                                }
+
+
+
+                            }
+
+                        }
+                    })
+                    .load(Uri.parse(item.miniChart), ivChart)
+
             }
             itemView.setOnClickListener {
                 onItemClickListener?.let {
+
                     it(item)
+
+
                 }
             }
 
 
         }
+
     }
 
 
@@ -73,39 +108,10 @@ class WatchMarketPagingAdapter @Inject constructor() :
             }
         }
     }
-    fun ImageView.loadUrl(url: String) {
-
-        val imageLoader = ImageLoader.Builder(this.context)
-            .components {
-                add(SvgDecoder.Factory())
-            }
-            .build()
-
-        val request = ImageRequest.Builder(this.context)
-            //.crossfade(true)
-            //.crossfade(500)
-            .size(ViewSizeResolver(this))
-
-            .memoryCachePolicy(CachePolicy.ENABLED)
-
-            .data(url)
-            .target(this)
-
-            .build()
-
-        imageLoader.enqueue(request)
 
 
 
-    }
 
-
-    // Function to apply the color filter
-    private fun applyColorFilterToImageView(imageView: ImageView) {
-        // Apply your desired color filter here
-        val redColorFilter = PorterDuffColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP)
-        imageView.colorFilter = redColorFilter
-    }
 
 
 }

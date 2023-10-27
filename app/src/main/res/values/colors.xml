@@ -94,14 +94,8 @@
     <color name="color_button_06C270">#06C270</color>
 
 
-    <!--    <color name="color_20242F">#20242F</color>-->
+    <color name="color_chart_red">#FF0000</color>
+    <color name="color_chart_green">#5ECD1A</color>
 
-
-
-
-
-
-
-\
 
 </resources>

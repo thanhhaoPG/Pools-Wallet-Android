@@ -94,10 +94,7 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.48")
 
 
-    //Glide
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
-    implementation("io.coil-kt:coil:2.4.0")
-    implementation("io.coil-kt:coil-svg:2.4.0")
+
 
     //lottie-android
     implementation ("com.airbnb.android:lottie:6.1.0")
@@ -141,6 +138,15 @@ dependencies {
     implementation ("androidx.webkit:webkit:1.8.0")
 
     //Paging
-    implementation ("androidx.paging:paging-runtime-ktx:3.2.0")
+    implementation ("androidx.paging:paging-runtime-ktx:3.2.1")
+
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    kapt ("com.github.bumptech.glide:compiler:4.13.0")
+
+    //load .svg from internet to imageview
+    implementation ("com.caverock:androidsvg-aar:1.4")
+
 
 }
