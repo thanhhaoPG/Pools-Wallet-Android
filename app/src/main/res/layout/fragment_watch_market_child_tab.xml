@@ -9,7 +9,7 @@
         android:layout_marginTop="@dimen/space_start_end"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
-        tools:listitem="@layout/item_watch_maket"
+        tools:listitem="@layout/item_watch_market"
         android:layout_height="wrap_content"
         android:id="@+id/rvListWatchMarket"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

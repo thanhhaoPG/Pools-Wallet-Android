@@ -24,7 +24,7 @@
             android:textAlignment="center"
             android:textColor="@color/color_text_black"
             android:textSize="@dimen/text_size_32"
-            android:text="All in one Dapp"/>
+            android:text="@string/all_in_one_dapp"/>
         <com.wallet.pools.presentation.widget.TvRegular
             android:id="@+id/tvSubTitleLogin"
             android:textAlignment="center"
@@ -32,7 +32,7 @@
             android:textColor="@color/color_text_9E9E9E"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Store and protect all your decentralized assets within a Dapp"/>
+            android:text="@string/store_and_protect_all_your_decentralized_assets_within_a_dapp"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/llCreateWallet"
@@ -48,7 +48,7 @@
         <com.wallet.pools.presentation.widget.TvBold
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create a new Wallet"
+            android:text="@string/create_a_new_wallet_login"
             android:textSize="@dimen/text_size_16"
             android:textColor="@color/color_text_white"
             />
@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Import Wallet"
+        android:text="@string/import_wallet_login"
         android:textSize="@dimen/text_size_16"
         android:textColor="@color/color_text_black"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -33,6 +33,7 @@ class WebViewFragment : BaseFragment<FragmentWebViewBinding, BaseViewModel>() {
     }
 
     override fun onStart() {
+        (requireActivity() as MainActivity).hideBottomView()
         super.onStart()
 
     }
@@ -51,8 +52,7 @@ class WebViewFragment : BaseFragment<FragmentWebViewBinding, BaseViewModel>() {
 
     private fun initView() {
         binding.apply {
-           // customWebView.setData(args.linkURL,args.nameTitle)
-
+            customWebView.setData(url = args.linkURL , nameTitle = args.nameTitle)
         }
 
 

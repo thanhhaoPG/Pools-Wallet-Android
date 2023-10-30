@@ -12,5 +12,26 @@
         tools:layout="@layout/fragment_tab_market">
 
     </fragment>
+    <fragment
+        android:id="@+id/detailWatchMarketFragment"
+        android:name="com.wallet.pools.presentation.screen.detailWatchMarket.DetailWatchMarketFragment"
+        android:label="DetailWatchMarketFragment" >
+        <argument
+            android:name="data"
+            app:argType="com.wallet.pools.domain.model.Daum"/>
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.wallet.pools.presentation.screen.webView.WebViewFragment"
+        android:label="WebViewFragment" >
+        <argument
+            android:name="nameTitle"
+            app:argType="string"
+            android:defaultValue="" />
+        <argument
+            android:name="linkURL"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
 
 </navigation>

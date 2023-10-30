@@ -47,19 +47,6 @@
             app:argType="string"/>
     </fragment>
     <fragment
-        android:id="@+id/webViewFragment"
-        android:name="com.wallet.pools.presentation.screen.webView.WebViewFragment"
-        android:label="WebViewFragment" >
-        <argument
-            android:name="nameTitle"
-            app:argType="string"
-            android:defaultValue="" />
-        <argument
-            android:name="linkURL"
-            app:argType="string"
-            android:defaultValue="" />
-    </fragment>
-    <fragment
         android:id="@+id/textPhraseFragment"
         android:name="com.wallet.pools.presentation.screen.textPhraseFragment.TextPhraseFragment"
         android:label="TextPhraseFragment" />

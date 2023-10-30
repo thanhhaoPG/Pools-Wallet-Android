@@ -98,4 +98,11 @@
     <color name="color_chart_green">#5ECD1A</color>
 
 
+    <color name="color_chart_top_fill_color_1">#4726A69A</color>
+    <color name="color_chart_top_fill_color_2">#0D26A69A</color>
+    <color name="color_chart_top_line_color">#26A69A</color>
+    <color name="color_chart_bottom_fill_color_1">#0DEF5350</color>
+    <color name="color_chart_bottom_fill_color_2">#47EF5350</color>
+    <color name="color_chart_bottom_line_color">#EF5350</color>
+
 </resources>

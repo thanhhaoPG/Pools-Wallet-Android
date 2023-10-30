@@ -2,6 +2,7 @@ package com.wallet.pools.presentation.screen.tabMarket.tabLayout
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -9,10 +10,11 @@ import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airo.playground.base.PagingLoadStateAdapter
+import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentNewChildTabBinding
-import com.wallet.pools.databinding.FragmentWatchMaketChildTabBinding
+import com.wallet.pools.databinding.FragmentWatchMarketChildTabBinding
 import com.wallet.pools.extenstion.showToast
 import com.wallet.pools.presentation.screen.main.MainActivity
 import com.wallet.pools.presentation.screen.tabWallet.WalletViewModel
@@ -25,15 +27,15 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class WatchMaketChildTabFragment : BaseFragment<FragmentWatchMaketChildTabBinding, BaseViewModel>() {
+class WatchMaketChildTabFragment : BaseFragment<FragmentWatchMarketChildTabBinding, BaseViewModel>() {
 
 
     override val viewModel: WatchMarketChildTabViewModel by viewModels()
 
     @Inject
     lateinit var marketAdapter: WatchMarketPagingAdapter
-    override fun getViewBinding(): FragmentWatchMaketChildTabBinding =
-        FragmentWatchMaketChildTabBinding.inflate(layoutInflater)
+    override fun getViewBinding(): FragmentWatchMarketChildTabBinding =
+        FragmentWatchMarketChildTabBinding.inflate(layoutInflater)
 
     override fun onBackFragment() {
 
@@ -73,7 +75,8 @@ class WatchMaketChildTabFragment : BaseFragment<FragmentWatchMaketChildTabBindin
             footer = PagingLoadStateAdapter(marketAdapter)
         )
         marketAdapter.setItemClickListener {
-            requireContext().showToast(it.name)
+            val bundle = bundleOf("data" to it)
+            findNavController().navigate(R.id.detailWatchMarketFragment,bundle)
         }
     }
     private fun initPaging() {

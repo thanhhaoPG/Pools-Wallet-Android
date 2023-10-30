@@ -17,15 +17,17 @@
             android:background="@drawable/bg_linear_conner_radius_gray"
             android:backgroundTint="@color/color_F5F5F5"
             android:gravity="top"
-            android:hint="Enter or scan your private key"
+            android:hint="@string/enter_or_scan_your_private_key"
             android:minHeight="@dimen/dimen200dp"
-            android:padding="10dp" />
+            android:autofillHints="name"
+            android:padding="@dimen/dimen10dp"
+            android:inputType="text" />
 
         <com.wallet.pools.presentation.widget.TvLight
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/dimen10dp"
             android:textColor="@color/color_text_757575"
-            android:text="Enter or scan your private key"
+            android:text="@string/enter_or_scan_your_private_key_text"
             android:layout_height="wrap_content"/>
         <com.wallet.pools.presentation.widget.TvRegular
             android:textColor="@color/color_text_343434"
@@ -33,17 +35,19 @@
             android:textSize="@dimen/text_size_16"
             android:layout_marginTop="@dimen/dimen20dp"
             android:layout_height="wrap_content"
-            android:text="PICK A NAME FOR YOUR WALLET"
+            android:text="@string/pick_a_name_for_your_wallet"
             android:id="@+id/tvTitleWalletName"/>
         <EditText
             android:layout_marginTop="@dimen/dimen10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen10dp"
-            android:hint='\@name'
+            android:padding="@dimen/dimen13dp"
+            android:autofillHints="name"
+            android:hint='@string/name'
             android:textColor="@color/color_text_black"
             android:background="@drawable/bg_linear_conner_radius_gray"
-            android:backgroundTint="@color/color_F5F5F5"/>
+            android:backgroundTint="@color/color_F5F5F5"
+            android:inputType="text" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/llCreatePin"
@@ -66,6 +70,6 @@
             android:textSize="@dimen/text_size_16"
             android:layout_height="wrap_content"
             android:textColor="@color/color_text_white"
-            android:text="Import Wallet "/>
+            android:text="@string/import_wallet_text"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

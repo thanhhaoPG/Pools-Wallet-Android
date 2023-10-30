@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.databinding.FragmentSettingThemeBinding
+import com.wallet.pools.presentation.screen.main.MainActivity
 import com.wallet.pools.presentation.screen.settingTheme.SettingThemeViewModel.Companion.THEME_AUTO
 import com.wallet.pools.presentation.screen.settingTheme.SettingThemeViewModel.Companion.THEME_DARK
 import com.wallet.pools.presentation.screen.settingTheme.SettingThemeViewModel.Companion.THEME_LIGHT
@@ -32,6 +33,7 @@ class SettingThemeFragment : BaseFragment<FragmentSettingThemeBinding, SettingTh
     }
 
     override fun onStart() {
+        (requireActivity() as MainActivity).hideBottomView()
         super.onStart()
 
     }

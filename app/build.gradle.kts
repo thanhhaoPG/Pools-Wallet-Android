@@ -140,7 +140,6 @@ dependencies {
     //Paging
     implementation ("androidx.paging:paging-runtime-ktx:3.2.1")
 
-
     //Glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     kapt ("com.github.bumptech.glide:compiler:4.13.0")
@@ -148,5 +147,7 @@ dependencies {
     //load .svg from internet to imageview
     implementation ("com.caverock:androidsvg-aar:1.4")
 
+    //Chart
+    implementation ("com.tradingview:lightweightcharts:4.0.0")
 
 }

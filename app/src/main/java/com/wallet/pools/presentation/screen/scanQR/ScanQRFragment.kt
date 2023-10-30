@@ -52,7 +52,7 @@ class ScanQRFragment : BaseFragment<FragmentScanQrCodeBinding, BaseViewModel>() 
     override fun onBackFragment() {
         findNavController().navigateUp()
     }
-    private lateinit var scannerQr : CodeScanner
+    private lateinit var scannerQrCode : CodeScanner
     private val changeImage =
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
@@ -97,8 +97,7 @@ class ScanQRFragment : BaseFragment<FragmentScanQrCodeBinding, BaseViewModel>() 
     private fun onClickView() {
        binding.apply {
            tvFlashButton.setOnClickListener {
-               scannerQr.isFlashEnabled = !scannerQr.isFlashEnabled
-               Log.d("toan","onClickView : ${scannerQr.isFlashEnabled}")
+               scannerQrCode.isFlashEnabled = !scannerQrCode.isFlashEnabled
            }
            binding.imageQr.setOnClickListener {
                val pickImg = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
@@ -120,31 +119,31 @@ class ScanQRFragment : BaseFragment<FragmentScanQrCodeBinding, BaseViewModel>() 
             val result = reader.decode(bitmap)
             contents = result.text
         } catch (e: Exception) {
-            Log.e("QrTest", "Error decoding barcode", e)
+            e.printStackTrace()
         }
         return contents
     }
     private fun scanning() {
-        scannerQr = CodeScanner(requireContext(),binding.scannerqr)
-        scannerQr.camera = CodeScanner.CAMERA_BACK
-        scannerQr.formats = CodeScanner.ALL_FORMATS
-        scannerQr.autoFocusMode = AutoFocusMode.SAFE
-        scannerQr.scanMode = ScanMode.SINGLE
-        scannerQr.isAutoFocusEnabled = true
-        scannerQr.decodeCallback = DecodeCallback {
+        scannerQrCode = CodeScanner(requireContext(),binding.scannerQr)
+        scannerQrCode.camera = CodeScanner.CAMERA_BACK
+        scannerQrCode.formats = CodeScanner.ALL_FORMATS
+        scannerQrCode.autoFocusMode = AutoFocusMode.SAFE
+        scannerQrCode.scanMode = ScanMode.SINGLE
+        scannerQrCode.isAutoFocusEnabled = true
+        scannerQrCode.decodeCallback = DecodeCallback {
             requireActivity().runOnUiThread {
                 val text = "Result Scan : ${it.text}"
                 binding.tvResultScan.text = text
             }
         }
 
-        scannerQr.errorCallback = ErrorCallback {
+        scannerQrCode.errorCallback = ErrorCallback {
             requireActivity().runOnUiThread {
                 requireActivity().showToast("Camera initialization error : ${it.message}")
             }
         }
-        binding.scannerqr.setOnClickListener {
-            scannerQr.startPreview()
+        binding.scannerQr.setOnClickListener {
+            scannerQrCode.startPreview()
         }
     }
     private fun checkStatusPermission() {
@@ -173,31 +172,29 @@ class ScanQRFragment : BaseFragment<FragmentScanQrCodeBinding, BaseViewModel>() 
             scanning()
         } else {
             val imagePermissions =  Manifest.permission.CAMERA
-            if (imagePermissions != null) {
-                for (permission in imagePermissions) {
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(
-                            requireActivity(),
-                            permission.toString()
-                        )
-                    ) {
-                        requireActivity().showToast("Permission camera denied.")
-                        return@registerForActivityResult
+            for (permission in imagePermissions) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(
+                        requireActivity(),
+                        permission.toString()
+                    )
+                ) {
+                    requireActivity().showToast("Permission camera denied.")
+                    return@registerForActivityResult
 
-                    }
                 }
             }
         }
     }
     override fun onResume() {
         super.onResume()
-        if(::scannerQr.isInitialized){
-            scannerQr.startPreview()
+        if(::scannerQrCode.isInitialized){
+            scannerQrCode.startPreview()
         }
     }
 
     override fun onPause() {
-        if(::scannerQr.isInitialized){
-            scannerQr.releaseResources()
+        if(::scannerQrCode.isInitialized){
+            scannerQrCode.releaseResources()
         }
         super.onPause()
     }

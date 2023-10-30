@@ -1,7 +1,6 @@
 package com.wallet.pools.presentation.screen.createNewWallet
 
-import android.content.Context
-import android.content.pm.PackageManager
+
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -12,9 +11,9 @@ import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.view.View
-import androidx.core.app.ActivityCompat
+
 import androidx.core.content.ContextCompat
-import androidx.core.os.bundleOf
+
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.rajat.pdfviewer.PdfViewerActivity
@@ -22,7 +21,7 @@ import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentCreateNewWalletBinding
-import com.wallet.pools.extenstion.showToast
+
 import com.wallet.pools.presentation.screen.login.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

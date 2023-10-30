@@ -1,25 +1,18 @@
 package com.wallet.pools.presentation.screen.tabMarket.tabLayout
 
-import android.content.res.ColorStateList
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.ColorFilter
 import android.graphics.Paint
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.core.content.ContextCompat
-import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.airo.playground.base.BaseAdapterPaging
 import com.bumptech.glide.Glide
 import com.wallet.pools.R
-import com.wallet.pools.databinding.ItemWatchMaketBinding
+import com.wallet.pools.databinding.ItemWatchMarketBinding
 import com.wallet.pools.domain.model.Daum
 import com.wallet.pools.lib.loadSVG.GlideToVectorYou
 import com.wallet.pools.lib.loadSVG.GlideToVectorYouListener
@@ -33,12 +26,12 @@ class WatchMarketPagingAdapter @Inject constructor() :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WatchMarketViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemWatchMaketBinding.inflate(inflater, parent, false)
+        val binding = ItemWatchMarketBinding.inflate(inflater, parent, false)
         return WatchMarketViewHolder(binding)
     }
 
 
-    inner class WatchMarketViewHolder(private val binding: ItemWatchMaketBinding) :
+    inner class WatchMarketViewHolder(private val binding: ItemWatchMarketBinding) :
         RecyclerView.ViewHolder(binding.root), Binder<Daum> {
         override fun bind(item: Daum) {
             // Bind your data to the views in the ViewHolder
@@ -46,7 +39,7 @@ class WatchMarketPagingAdapter @Inject constructor() :
                 Glide.with(cIvIcon.context).load(item.icon).into(cIvIcon)
                 tvNameWallet.text = item.name
                 tvTypeWallet.text = item.symbol
-                tvCountPoint.text = item.quote.price.toInt().toString()
+                tvCountPoint.text = item.quote!!.price!!.toInt().toString()
                 tvCountMoney.text = item.quote.percentChange1h.toString()
 
                 GlideToVectorYou
@@ -65,14 +58,23 @@ class WatchMarketPagingAdapter @Inject constructor() :
 
                                 val paint = Paint()
 
-                                if(item.quote.percentChange7d<0){ //chart red
-                                    paint.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(root.context, R.color.color_chart_red), PorterDuff.Mode.SRC_ATOP)
+                                if (item.quote.percentChange7d!! < 0) { //chart red
+                                    paint.colorFilter = PorterDuffColorFilter(
+                                        ContextCompat.getColor(
+                                            root.context,
+                                            R.color.color_chart_red
+                                        ), PorterDuff.Mode.SRC_ATOP
+                                    )
                                     ivChart.setLayerPaint(paint)
-                                }else{// chart green
-                                    paint.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(root.context, R.color.color_chart_green), PorterDuff.Mode.SRC_ATOP)
+                                } else {// chart green
+                                    paint.colorFilter = PorterDuffColorFilter(
+                                        ContextCompat.getColor(
+                                            root.context,
+                                            R.color.color_chart_green
+                                        ), PorterDuff.Mode.SRC_ATOP
+                                    )
                                     ivChart.setLayerPaint(paint)
                                 }
-
 
 
                             }
@@ -80,6 +82,7 @@ class WatchMarketPagingAdapter @Inject constructor() :
                         }
                     })
                     .load(Uri.parse(item.miniChart), ivChart)
+
 
             }
             itemView.setOnClickListener {
@@ -108,10 +111,6 @@ class WatchMarketPagingAdapter @Inject constructor() :
             }
         }
     }
-
-
-
-
 
 
 }

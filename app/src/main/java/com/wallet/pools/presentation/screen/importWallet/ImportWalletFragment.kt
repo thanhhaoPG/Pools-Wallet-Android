@@ -8,11 +8,11 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
-import com.wallet.pools.databinding.FragmentCreateNewWalletBinding
+
 import com.wallet.pools.databinding.FragmentImportWalletBinding
 import com.wallet.pools.presentation.screen.importWallet.tabLayout.ImportWalletPageAdapter
 import com.wallet.pools.presentation.screen.login.LoginViewModel
-import com.wallet.pools.presentation.screen.tabWallet.tabLayout.WalletViewPagetAdapter
+
 import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ImportWalletFragment : BaseFragment<FragmentImportWalletBinding, BaseViewModel>() {

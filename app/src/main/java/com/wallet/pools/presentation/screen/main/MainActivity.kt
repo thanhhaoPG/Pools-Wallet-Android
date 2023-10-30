@@ -32,12 +32,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     fun hideBottomView() {
-
-
         binding.apply {
             viewShadow.visibility = View.GONE
             bottomNavigationViewMain.visibility = View.GONE
-
         }
 
 

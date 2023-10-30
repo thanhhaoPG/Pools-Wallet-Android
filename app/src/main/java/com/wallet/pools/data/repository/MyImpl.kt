@@ -2,8 +2,10 @@ package com.wallet.pools.data.repository
 
 import com.wallet.pools.data.remote.MyApi
 import com.wallet.pools.data.remote.dto.toDomain
+import com.wallet.pools.data.request.RequestDataChart
 import com.wallet.pools.data.request.RequestWatchMaket
-import com.wallet.pools.domain.model.WatchMaketDomain
+import com.wallet.pools.domain.model.ListDataChartDomain
+import com.wallet.pools.domain.model.WatchMarketDomain
 import com.wallet.pools.domain.repository.MyRepository
 import com.wallet.pools.util.Resource
 import kotlinx.coroutines.flow.Flow
@@ -27,7 +29,7 @@ class MyImpl @Inject constructor(
 
 
 
-    override suspend fun getWatchMaket(requestWatchMaket: RequestWatchMaket): Flow<Resource<WatchMaketDomain>> {
+    override suspend fun getWatchMaket(requestWatchMaket: RequestWatchMaket): Flow<Resource<WatchMarketDomain>> {
         return flow {
             emit(Resource.Loading())
             val user = api.getWatchMaket(
@@ -38,6 +40,18 @@ class MyImpl @Inject constructor(
             user?.let { emit(Resource.Success(it)) }
         }.catch {
 //            this.handleError(it)
+        }
+    }
+
+    override suspend fun getDataChart(requestDataChart: RequestDataChart): Flow<Resource<ListDataChartDomain>> {
+        return flow {
+            emit(Resource.Loading())
+            val user = api.getDataChart(
+               id = requestDataChart.data.id
+            ).toDomain()
+            user?.let { emit(Resource.Success(it)) }
+        }.catch {
+
         }
     }
 
