@@ -11,7 +11,6 @@ import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.data.remote.MyApi
 import com.wallet.pools.data.remote.dto.toDomain
 import com.wallet.pools.domain.model.Daum
-import com.wallet.pools.domain.model.WatchMaketDomain
 import com.wallet.pools.util.Constant
 import com.wallet.pools.util.CoroutineContextProvider
 import dagger.hilt.android.lifecycle.HiltViewModel

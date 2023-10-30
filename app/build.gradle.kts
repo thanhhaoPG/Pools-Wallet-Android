@@ -142,5 +142,7 @@ dependencies {
 
     //Paging
     implementation ("androidx.paging:paging-runtime-ktx:3.2.0")
+    //Chart
+    implementation ("com.tradingview:lightweightcharts:4.0.0")
 
 }

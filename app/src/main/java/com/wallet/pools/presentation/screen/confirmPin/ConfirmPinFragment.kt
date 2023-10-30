@@ -1,11 +1,9 @@
 package com.wallet.pools.presentation.screen.confirmPin
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -14,9 +12,7 @@ import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentConfirmPinBinding
-import com.wallet.pools.databinding.FragmentPinViewBinding
 import com.wallet.pools.extenstion.showToast
-import com.wallet.pools.presentation.screen.main.MainActivity
 import com.wallet.pools.presentation.screen.pin.PinViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

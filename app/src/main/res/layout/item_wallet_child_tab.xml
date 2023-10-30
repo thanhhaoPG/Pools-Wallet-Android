@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:orientation="horizontal"
     android:gravity="center"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginHorizontal="@dimen/space_start_end"
     android:layout_height="wrap_content">
     <com.google.android.material.circularreveal.CircularRevealLinearLayout
@@ -17,14 +17,14 @@
             android:id="@+id/tvNameWallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MATIC"
+            tools:text="MATIC"
             android:textSize="@dimen/text_size_16"
             android:textColor="@color/color_text_343434"/>
         <com.wallet.pools.presentation.widget.TvLight
             android:id="@+id/tvTypeWallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Palygon"
+            tools:text="Palygon"
             android:layout_below="@+id/tvNameWallet"
             android:textSize="@dimen/text_size_12"
             android:textColor="@color/color_text_757575"/>
@@ -32,7 +32,7 @@
             android:id="@+id/tvCountPoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MATIC"
+            tools:text="MATIC"
             android:layout_alignParentEnd="true"
             android:textSize="@dimen/text_size_16"
             android:textColor="@color/color_text_212121"/>
@@ -40,7 +40,7 @@
             android:id="@+id/tvCountMoney"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Palygon"
+            tools:text="Palygon"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/tvCountPoint"
             android:textSize="@dimen/text_size_12"

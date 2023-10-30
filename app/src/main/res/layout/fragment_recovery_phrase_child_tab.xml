@@ -13,9 +13,10 @@
         android:layout_marginHorizontal="@dimen/space_start_end"
         android:layout_height="wrap_content">
         <EditText
-            android:hint="Enter your 12-word phrase"
+            android:hint="@string/enter_your_12_word_phrase"
             android:gravity="top"
             android:padding="10dp"
+            android:autofillHints="name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="@dimen/dimen200dp"
@@ -25,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="@dimen/dimen10dp"
             android:textColor="@color/color_text_757575"
-            android:text="*12 (sometime 24) words separated with a space"
+            android:text="@string/_12_sometime_24_words_separated_with_a_space"
             android:layout_height="wrap_content"/>
         <com.wallet.pools.presentation.widget.TvRegular
             android:textColor="@color/color_text_343434"
@@ -33,14 +34,15 @@
             android:textSize="@dimen/text_size_16"
             android:layout_marginTop="@dimen/dimen20dp"
             android:layout_height="wrap_content"
-            android:text="PICK A NAME FOR YOUR WALLET"
+            android:text="@string/pick_a_name_for_your_wallet"
             android:id="@+id/tvTitleWalletName"/>
         <EditText
             android:layout_marginTop="@dimen/dimen10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen10dp"
-            android:hint='\@name'
+            android:padding="@dimen/dimen13dp"
+            android:hint='@string/name'
+            android:autofillHints="name"
             android:textColor="@color/color_text_black"
             android:background="@drawable/bg_linear_conner_radius_gray"
             android:backgroundTint="@color/color_F5F5F5"/>
@@ -66,6 +68,6 @@
             android:textSize="@dimen/text_size_16"
             android:layout_height="wrap_content"
             android:textColor="@color/color_text_white"
-            android:text="Import Wallet "/>
+            android:text="@string/import_wallet_login"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

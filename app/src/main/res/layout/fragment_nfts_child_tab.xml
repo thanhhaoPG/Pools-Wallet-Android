@@ -15,7 +15,7 @@
        android:src="@drawable/imagenfts"/>
     <com.wallet.pools.presentation.widget.TvRegular
         android:layout_width="match_parent"
-        android:text="No NFTs Found"
+        android:text="@string/no_nfts_found"
         android:textColor="@color/color_text_757575"
         android:gravity="center"
         android:id="@+id/tvNFTs"
@@ -29,7 +29,8 @@
         android:orientation="horizontal"
         android:layout_marginTop="30dp"
         android:gravity="center"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -41,11 +42,12 @@
             <com.wallet.pools.presentation.widget.TvSemiBold
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Receive"
+                android:text="@string/receive"
                 android:textSize="@dimen/text_size_14"
                 android:textColor="@color/color_text_06C270"/>
         </LinearLayout>
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="@drawable/bg_ll_conner_radius_color_06c270"
@@ -56,7 +58,7 @@
             <com.wallet.pools.presentation.widget.TvSemiBold
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Import"
+                android:text="@string/string_import"
                 android:textSize="@dimen/text_size_14"
                 android:textColor="@color/color_text_06C270"/>
         </LinearLayout>

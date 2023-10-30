@@ -1,8 +1,9 @@
 package com.wallet.pools.data.remote
 
-import com.wallet.pools.data.remote.dto.WatchMaketDto
+import com.wallet.pools.data.remote.dto.ListDataChartDto
+import com.wallet.pools.data.remote.dto.WatchMarketDto
 import retrofit2.http.GET
-import retrofit2.http.Header
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MyApi {
@@ -16,7 +17,12 @@ interface MyApi {
         @Query("page") page: Int,
         @Query("limit") limit: Int,
         @Query("order") order: String,
-    ): WatchMaketDto
+    ): WatchMarketDto
+
+    @GET("/pools-wallet/market/chart/{id}")
+    suspend fun getDataChart(
+        @Path("id") id: Long,
+    ): ListDataChartDto
 
 
 }

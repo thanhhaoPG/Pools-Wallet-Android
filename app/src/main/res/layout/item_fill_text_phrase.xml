@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/color_text_black"
-        android:text="1."/>
+        tools:text="1."/>
     <LinearLayout
         android:id="@+id/llFillText"
         android:background="@drawable/bg_radius_conner_graph_gray"

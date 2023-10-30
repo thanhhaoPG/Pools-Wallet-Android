@@ -37,33 +37,30 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen0dp"
         android:background="@color/bg_app_white"
-        app:layout_constraintBottom_toBottomOf="@+id/frmBottom"
-        app:layout_constraintTop_toTopOf="@+id/frmBottom" />
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationViewMain"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavigationViewMain" />
 
-    <FrameLayout
-        android:id="@+id/frmBottom"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_bottom_view"
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/bottomNavigationViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen60dp"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        android:minHeight="@dimen/dimen50dp"
+        app:elevation="0dp"
+        app:itemIconSize="@dimen/dimen24dp"
+        app:itemIconTint="@color/color_selector_bottom_navigation"
+        app:itemRippleColor="@android:color/transparent"
+        app:itemTextColor="@color/color_selector_bottom_navigation"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/menu_bottom_main" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationViewMain"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen60dp"
-            android:layout_gravity="bottom"
-            android:background="@android:color/transparent"
-            android:elevation="0dp"
-            android:minHeight="@dimen/dimen50dp"
-            app:elevation="0dp"
-            app:itemIconSize="@dimen/dimen24dp"
-            app:itemIconTint="@color/color_selector_bottom_navigation"
-            app:itemRippleColor="@android:color/transparent"
-            app:itemTextColor="@color/color_selector_bottom_navigation"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/menu_bottom_main" />
-    </FrameLayout>
+
 
 
 

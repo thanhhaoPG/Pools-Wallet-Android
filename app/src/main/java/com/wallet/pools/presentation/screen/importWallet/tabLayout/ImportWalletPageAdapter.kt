@@ -3,8 +3,7 @@ package com.wallet.pools.presentation.screen.importWallet.tabLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.wallet.pools.presentation.screen.tabWallet.tabLayout.NFTsChildTabFragment
-import com.wallet.pools.presentation.screen.tabWallet.tabLayout.WalletChildTabFragment
+
 
 
 class ImportWalletPageAdapter(

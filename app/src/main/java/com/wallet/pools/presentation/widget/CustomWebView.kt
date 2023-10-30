@@ -15,6 +15,8 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.navigation.findNavController
+import androidx.webkit.WebSettingsCompat
+import androidx.webkit.WebViewFeature
 import com.wallet.pools.R
 
 
@@ -23,7 +25,6 @@ class CustomWebView(context: Context, attrs: AttributeSet?) : LinearLayout(conte
     private  val webView : WebView
     private  val frmBack : FrameLayout
     private  val tvTitle : TextView
-
     init {
         LayoutInflater.from(context).inflate(R.layout.view_custom_web_view, this, true)
         webView = findViewById(R.id.webView)
@@ -32,6 +33,25 @@ class CustomWebView(context: Context, attrs: AttributeSet?) : LinearLayout(conte
         frmBack.setOnClickListener {
             findNavController().navigateUp()
         }
+    }
+    fun setData(url :String, nameTitle:String){
+        if (url.isNotEmpty()){
+            webView.settings.javaScriptEnabled = true;
+            webView.settings.loadWithOverviewMode = true;
+            webView.settings.useWideViewPort = true;
+
+            // Configure a WebViewClient to handle navigation events
+            // Configure a WebChromeClient (optional)
+            webView.webChromeClient =  WebChromeClient()
+                    webView.loadUrl(url)
+
+                    if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+                    {
+                        WebSettingsCompat.setAlgorithmicDarkeningAllowed(webView.settings, true);
+                    }
+        }
+        tvTitle.text = nameTitle
+    }
     }
 //    @SuppressLint("SetJavaScriptEnabled")
 //    fun setData(url : String , nameTitle :String){
@@ -61,4 +81,4 @@ class CustomWebView(context: Context, attrs: AttributeSet?) : LinearLayout(conte
 //        tvTitle.text = nameTitle
 //    }
 
-    }
+

@@ -6,9 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
-import com.wallet.pools.databinding.FragmentNftsChildTabBinding
 import com.wallet.pools.databinding.FragmentPrivateKeyChildTabBinding
-import com.wallet.pools.presentation.screen.main.MainActivity
 import com.wallet.pools.presentation.screen.tabWallet.WalletViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,10 +28,7 @@ class PrivateKeyChildTabFragment : BaseFragment<FragmentPrivateKeyChildTabBindin
 
     }
 
-    override fun onStart() {
-        super.onStart()
 
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

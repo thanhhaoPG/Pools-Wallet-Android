@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.budiyev.android.codescanner.CodeScannerView
-        android:id="@+id/scannerqr"
+        android:id="@+id/scannerQr"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:autoFocusButtonColor="@color/white"
@@ -48,7 +48,7 @@
             android:id="@+id/tvFlashButton"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
-            android:text="Light"
+            android:text="@string/light"
             android:drawablePadding="10dp"
             android:gravity="center_horizontal"
             android:layout_weight="1"
@@ -63,7 +63,7 @@
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:textColor="@color/white"
-            android:text="My QR Code"
+            android:text="@string/my_qr_code"
             app:drawableTopCompat="@drawable/baseline_qr_code_24" />
 
         <TextView
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
-            android:text="My Brower"
+            android:text="@string/my_brower"
             android:visibility="visible"
             app:drawableTopCompat="@drawable/baseline_web_24" />
 

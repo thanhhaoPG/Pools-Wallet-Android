@@ -22,7 +22,7 @@ import com.airo.playground.base.BaseAdapterPaging
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.model.StreamEncoder
-import com.wallet.pools.databinding.ItemWatchMaketBinding
+import com.wallet.pools.databinding.ItemWatchMarketBinding
 import com.wallet.pools.domain.model.Daum
 import java.io.InputStream
 import javax.inject.Inject
@@ -34,12 +34,12 @@ class WatchMarketPagingAdapter @Inject constructor() :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WatchMarketViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemWatchMaketBinding.inflate(inflater, parent, false)
+        val binding = ItemWatchMarketBinding.inflate(inflater, parent, false)
         return WatchMarketViewHolder(binding)
     }
 
 
-    inner class WatchMarketViewHolder(private val binding: ItemWatchMaketBinding) :
+    inner class WatchMarketViewHolder(private val binding: ItemWatchMarketBinding) :
         RecyclerView.ViewHolder(binding.root), Binder<Daum> {
         override fun bind(item: Daum) {
             // Bind your data to the views in the ViewHolder
@@ -47,7 +47,7 @@ class WatchMarketPagingAdapter @Inject constructor() :
                 Glide.with(cIvIcon.context).load(item.icon).into(cIvIcon)
                 tvNameWallet.text = item.name
                 tvTypeWallet.text = item.symbol
-                tvCountPoint.text = item.quote.price.toInt().toString()
+                tvCountPoint.text = item.quote!!.price!!.toInt().toString()
                 tvCountMoney.text =  item.quote.percentChange1h.toString()
 //                ivChart.loadUrl(item.miniChart)
             }

@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Import Wallet"
+            android:text="@string/import_wallet"
             android:textColor="@color/color_text_2d2d2d"
             android:textSize="@dimen/text_size_16"
             />
