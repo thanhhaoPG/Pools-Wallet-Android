@@ -5,7 +5,6 @@
     android:id="@+id/rootViewMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_app_white"
     android:clickable="true"
     android:focusable="true"
     >
@@ -30,13 +29,12 @@
         android:layout_height="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/bg_navigation_white"
+        android:background="@drawable/bg_shadow_bottom_bar"
         app:layout_constraintBottom_toTopOf="@id/viewBackgroundBottom"/>
     <View
         android:id="@+id/viewBackgroundBottom"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen0dp"
-        android:background="@color/bg_app_white"
         app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationViewMain"
         app:layout_constraintTop_toTopOf="@+id/bottomNavigationViewMain" />
 
