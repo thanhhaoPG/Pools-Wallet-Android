@@ -6,7 +6,6 @@
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     android:layout_height="match_parent">
     <LinearLayout
-        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="2"
@@ -31,8 +30,6 @@
                     android:id="@+id/frmBack"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
                     android:padding="@dimen/space_start_end">
 
                     <androidx.appcompat.widget.AppCompatImageView
@@ -53,17 +50,19 @@
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:textAlignment="center"
                     android:textSize="14sp"
+                    android:id="@+id/tvTitle"
                     android:textColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Put in your pin number"/>
+                    tools:text="Put in your pin number"/>
                 <com.wallet.pools.presentation.widget.TvRegular
+                    android:id="@+id/tvSubTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textSize="14sp"
                     android:textColor="@color/black"
-                    android:text="(This pincode will unclock your Pools wallet only on this device)"/>
+                    tools:text="(This pincode will unclock your Pools wallet only on this device)"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -135,82 +134,87 @@
             app:layout_constraintTop_toBottomOf="@id/pinDisplayContainer">
 
             <Button
-                android:id="@+id/pinKey1"
+                android:id="@+id/btnKey1"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="1" />
+                android:text="@string/_1" />
 
             <Button
-                android:id="@+id/pinKey2"
+                android:id="@+id/btnKey2"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="2" />
+                android:text="@string/_2" />
 
             <Button
-                android:id="@+id/pinKey3"
+                android:id="@+id/btnKey3"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="3" />
+                android:text="@string/_3" />
 
             <Button
-                android:id="@+id/pinKey4"
+                android:id="@+id/btnKey4"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="4" />
+                android:text="@string/_4" />
 
             <Button
-                android:id="@+id/pinKey5"
+                android:id="@+id/btnKey5"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="5" />
+                android:text="@string/_5" />
 
             <Button
-                android:id="@+id/pinKey6"
+                android:id="@+id/btnKey6"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="6" />
+                android:text="@string/_6" />
 
             <Button
-                android:id="@+id/pinKey7"
+                android:id="@+id/btnKey7"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="7" />
+                android:text="@string/_7" />
 
             <Button
-                android:id="@+id/pinKey8"
+                android:id="@+id/btnKey8"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="8" />
+                android:text="@string/_8" />
 
             <Button
-                android:id="@+id/pinKey9"
+                android:id="@+id/btnKey9"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="9" />
+                android:text="@string/_9" />
 
-            <Space
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/llBiometric"
+                android:gravity="center"
+                android:background="@color/color_06C270_unchanged"
                 android:layout_height="72dp"
-                android:layout_columnWeight="1" />
+                android:layout_columnWeight="1"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_fingerprint_24"/>
+            </LinearLayout>
 
             <Button
-                android:id="@+id/pin_key_0"
+                android:id="@+id/btnKey0"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="0" />
+                android:text="@string/_0" />
 
             <Button
-                android:id="@+id/pin_key_back"
+                android:id="@+id/btnKeyDelete"
                 android:layout_height="72dp"
                 android:layout_columnWeight="1"
-                android:text="&lt;&lt;" />
+                android:text="@string/lt_lt" />
 
         </GridLayout>
 
     </LinearLayout>
-
-    <com.wallet.pools.presentation.widget.CustomPinView
-        android:id="@+id/customPinView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 </FrameLayout>

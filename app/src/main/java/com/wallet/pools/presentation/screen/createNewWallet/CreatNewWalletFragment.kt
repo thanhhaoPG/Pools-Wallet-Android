@@ -4,15 +4,18 @@ package com.wallet.pools.presentation.screen.createNewWallet
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Editable
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.TextPaint
+import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.view.View
 
 import androidx.core.content.ContextCompat
+import androidx.core.widget.doAfterTextChanged
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -57,15 +60,36 @@ class CreatNewWalletFragment : BaseFragment<FragmentCreateNewWalletBinding, Base
 
     private fun initView() {
         binding.apply {
+            llNext.isEnabled = false
+            editTextName.doAfterTextChanged {
+                if(editTextName.text.toString().isNotBlank()){
+                    if (checkBox.isChecked){
+                        llNext.isEnabled = true
+                    }
+                }else {
+                    llNext.isEnabled = false
+                }
+            }
+            checkBox.setOnClickListener {
+                if(checkBox.isChecked){
+                    if(editTextName.text.toString().isNotBlank()){
+                        llNext.isEnabled = true
+                    }
+                }else {
+                    llNext.isEnabled = false
+                }
+            }
+
             frmBack.setOnClickListener{
                 findNavController().navigateUp()
             }
             ivScanQR.setOnClickListener {
                 findNavController().navigate(R.id.scanQRFragment)
             }
-            llCreatePin.setOnClickListener {
+            llNext.setOnClickListener {
                 findNavController().navigate(R.id.pinFragment)
             }
+
         }
         clickableText()
 

@@ -1,18 +1,12 @@
 package com.wallet.pools.presentation.widget
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.webkit.WebChromeClient
-import android.webkit.WebResourceError
-import android.webkit.WebResourceRequest
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.FrameLayout
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.webkit.WebSettingsCompat
@@ -42,7 +36,6 @@ class CustomWebView(context: Context, attrs: AttributeSet?) : LinearLayout(conte
 
             // Configure a WebViewClient to handle navigation events
             // Configure a WebChromeClient (optional)
-            webView.webChromeClient =  WebChromeClient()
                     webView.loadUrl(url)
 
                     if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))

@@ -6,27 +6,30 @@
     android:layout_margin="@dimen/dimen10dp"
     android:gravity="center"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginTop="@dimen/dimen10dp"
+    android:layout_marginTop="10dp"
     android:layout_height="wrap_content">
-    <com.wallet.pools.presentation.widget.TvRegular
+    <LinearLayout
+        android:id="@+id/llFillText"
+        android:background="@drawable/bg_radius_conner"
+        android:layout_width="@dimen/dimen100dp"
+        android:backgroundTint="@color/color_06C270"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/dimen5dp"
+        android:layout_height="@dimen/dimen40dp">
+        <com.wallet.pools.presentation.widget.TvRegular
         android:id="@+id/tvNumber"
+            android:layout_marginVertical="@dimen/dimen10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/color_text_black"
         tools:text="1."/>
-    <LinearLayout
-        android:id="@+id/llFillText"
-        android:background="@drawable/bg_radius_conner_graph_gray"
-        android:layout_width="@dimen/dimen100dp"
-        android:gravity="center"
-        android:layout_marginStart="@dimen/dimen5dp"
-        android:layout_height="@dimen/dimen40dp">
         <TextView
-            android:id="@+id/tvFillTextPhrase"
+            android:id="@+id/tvRecovery"
             android:layout_width="wrap_content"
             android:textColor="@color/color_text_black"
             android:layout_height="wrap_content"
             android:layout_marginVertical="@dimen/dimen10dp"
-            tools:text=""/>
+            tools:text="fdfdfdfd"/>
     </LinearLayout>
 </LinearLayout>

@@ -105,4 +105,7 @@
     <color name="color_chart_bottom_fill_color_2">#47EF5350</color>
     <color name="color_chart_bottom_line_color">#EF5350</color>
 
+    <color name="color_06C270_enable">#06C270</color>
+    <color name="color_06C270_disable">#3363E3AB</color>
+
 </resources>
