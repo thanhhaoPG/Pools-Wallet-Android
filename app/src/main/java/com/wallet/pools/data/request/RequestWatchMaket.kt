@@ -6,5 +6,6 @@ data class RequestWatchMaket (
 data class RequestWatchMaketData(
     val page :Int,
     val limit:Int,
-    val order:String
+    val order:String,
+    val search:String
 )

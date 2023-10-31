@@ -44,4 +44,10 @@
     <string name="volume_change_24h">Volume Change 24h</string>
     <string name="tab_market_watch_market">Watch Market</string>
     <string name="tab_market_news">News</string>
+
+    <string name="no_data">No data</string>
+    <string name="hint_search_for_tokens">Search for tokens...</string>
+    <string name="str_sort_descending">DESCENDING</string>
+    <string name="str_sort_asc">ASCENDING</string>
+
 </resources>

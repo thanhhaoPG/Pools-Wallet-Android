@@ -18,5 +18,7 @@
     <color name="color_text_757575">#CFCFCF</color>
     <color name="color_text_484848">#ffffff</color>
     <color name="color_text_212121">#ffffff</color>
+    <color name="color_hint_text_9E9E9E">#B1B1B1</color>
+    <color name="color_card_E0E0E0">#BCBCFF</color>
 
 </resources>

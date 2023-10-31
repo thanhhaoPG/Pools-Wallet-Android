@@ -13,10 +13,11 @@ interface MyApi {
 //        @Body request: RequestLogin
 //    ): BaseResponse<LoginDto>
     @GET("/pools-wallet/market")
-    suspend fun getWatchMaket(
+    suspend fun getWatchMarket(
         @Query("page") page: Int,
         @Query("limit") limit: Int,
         @Query("order") order: String,
+        @Query("search") search: String,
     ): WatchMarketDto
 
     @GET("/pools-wallet/market/chart/{id}")

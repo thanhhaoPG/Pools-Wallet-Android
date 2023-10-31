@@ -1,15 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/rootWatchMarket"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toTopOf="parent"
+
+    <LinearLayout
         android:layout_marginTop="@dimen/space_start_end"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="@dimen/space_start_end"
+        android:background="@drawable/bg_search_corner_50"
+        android:id="@+id/llSearch"
         android:layout_width="match_parent"
-        tools:listitem="@layout/item_watch_market"
         android:layout_height="wrap_content"
-        android:id="@+id/rvListWatchMarket"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/space_start_end"
+        android:paddingVertical="@dimen/dimen8dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_search" />
+
+        <com.wallet.pools.presentation.widget.EdtInputRegular
+            android:layout_marginHorizontal="@dimen/dimen5dp"
+            android:id="@+id/edtSearchToken"
+            android:layout_width="0dp"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/color_hint_text_9E9E9E"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/hint_search_for_tokens"
+            android:imeOptions="actionSearch"
+            android:inputType="text" />
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:visibility="invisible"
+            android:id="@+id/ivClearText"
+            android:layout_width="@dimen/dimen15dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_clear_text_search" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llSort"
+        android:layout_margin="@dimen/space_start_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.wallet.pools.presentation.widget.TvRegular
+            android:id="@+id/tvStateSort"
+            android:textSize="@dimen/text_size_16"
+            android:text="@string/str_sort_descending"
+            android:textColor="@color/color_text_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivStateSort"
+            android:layout_marginTop="@dimen/dimen6dp"
+            android:layout_marginStart="@dimen/dimen5dp"
+            android:layout_width="@dimen/dimen10dp"
+            android:layout_height="@dimen/dimen10dp"
+            android:src="@drawable/ic_sort_desc"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            tools:listitem="@layout/item_watch_market"
+            android:layout_height="wrap_content"
+            android:id="@+id/rcvWatchMarket"/>
+        <com.wallet.pools.presentation.widget.EmptyView
+            android:id="@+id/emptyWatchMarker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.wallet.pools.presentation.screen.tabMarket.tabLayout
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
@@ -18,12 +19,21 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 
-
 @HiltViewModel
 class WatchMarketChildTabViewModel @Inject constructor(
     contextProvider: CoroutineContextProvider,
     private val myApi: MyApi
-    ) : BaseViewModel(contextProvider) {
+) : BaseViewModel(contextProvider) {
+
+    var searchString = MutableLiveData<String>()
+    var typeSortLiveData = MutableLiveData<String>()
+    val isSearchHaveData = MutableLiveData<Boolean>()
+
+    init {
+        searchString.value = ""
+        typeSortLiveData.value = "asc"
+
+    }
 
     private lateinit var _tipPagingFlow: Flow<PagingData<Daum>>
     val tipPagingFlow: Flow<PagingData<Daum>>
@@ -45,15 +55,16 @@ class WatchMarketChildTabViewModel @Inject constructor(
 
                 val page = params.key ?: 1
 
-                val response = myApi.getWatchMaket(
+                val response = myApi.getWatchMarket(
                     page = page,
                     limit = Constant.LIMIT_TIP_IN_ONE_PAGE,
-                    order = "asc"
+                    order = typeSortLiveData.value!!,
+                    search = searchString.value!!
                 )
-                val data =
-                    response.toDomain()
-                val nextPage =
-                    if (data == null || data.data.isEmpty() || data.total <= page) null else page + 1
+                val data = response.toDomain()
+                isSearchHaveData.value = data.data.isNotEmpty()
+
+                val nextPage = if (data == null || data.data.isEmpty() || data.total <= page) null else page + 1
 
                 LoadResult.Page(
                     data = data.data ?: ArrayList(),

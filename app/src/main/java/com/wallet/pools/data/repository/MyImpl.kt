@@ -32,10 +32,11 @@ class MyImpl @Inject constructor(
     override suspend fun getWatchMaket(requestWatchMaket: RequestWatchMaket): Flow<Resource<WatchMarketDomain>> {
         return flow {
             emit(Resource.Loading())
-            val user = api.getWatchMaket(
+            val user = api.getWatchMarket(
                 page = requestWatchMaket.data.page,
                 limit = requestWatchMaket.data.limit,
-                order = requestWatchMaket.data.order
+                order = requestWatchMaket.data.order,
+                search = requestWatchMaket.data.search
             ).toDomain()
             user?.let { emit(Resource.Success(it)) }
         }.catch {

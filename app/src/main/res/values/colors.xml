@@ -109,5 +109,9 @@
     <color name="color_btn_highlight_effect">#C3C1C1</color>
     <color name="color_btn_disable">#626262</color>
 
+    <color name="color_card_E0E0E0">#E0E0E0</color>
+
+    <color name="color_hint_text_9E9E9E">#9E9E9E</color>
+
 
 </resources>
