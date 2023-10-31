@@ -14,18 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.wallet.pools.presentation.widget.TvRegular
-            android:id="@+id/tvNameWallet"
+            android:id="@+id/tvSymbolWallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="MATIC"
             android:textSize="@dimen/text_size_16"
             android:textColor="@color/color_text_343434"/>
         <com.wallet.pools.presentation.widget.TvLight
-            android:id="@+id/tvTypeWallet"
+            android:id="@+id/tvNameWallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Palygon"
-            android:layout_below="@+id/tvNameWallet"
+            android:layout_below="@+id/tvSymbolWallet"
             android:textSize="@dimen/text_size_12"
             android:textColor="@color/color_text_757575"/>
         <com.wallet.pools.presentation.widget.TvRegular

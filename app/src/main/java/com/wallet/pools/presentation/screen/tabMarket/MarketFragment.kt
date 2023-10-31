@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.google.android.material.tabs.TabLayoutMediator
+import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentTabMarketBinding
@@ -51,8 +52,8 @@ class MarketFragment : BaseFragment<FragmentTabMarketBinding, BaseViewModel>() {
             viewPaperMarket.adapter = MarketViewPaperAdapter(requireActivity())
             TabLayoutMediator(tabLayoutMarket,viewPaperMarket){ tab , position ->
                 tab.text = when(position){
-                    0->"Watch Market"
-                    1->"New"
+                    0-> getString(R.string.tab_market_watch_market)
+                    1-> getString(R.string.tab_market_news)
                     else -> ""
                 }
             }.attach()

@@ -13,11 +13,7 @@ import com.airo.playground.base.PagingLoadStateAdapter
 import com.wallet.pools.R
 import com.wallet.pools.base.BaseFragment
 import com.wallet.pools.base.BaseViewModel
-import com.wallet.pools.databinding.FragmentNewChildTabBinding
 import com.wallet.pools.databinding.FragmentWatchMarketChildTabBinding
-import com.wallet.pools.extenstion.showToast
-import com.wallet.pools.presentation.screen.main.MainActivity
-import com.wallet.pools.presentation.screen.tabWallet.WalletViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
@@ -27,7 +23,8 @@ import javax.inject.Inject
 
 
 @AndroidEntryPoint
-class WatchMaketChildTabFragment : BaseFragment<FragmentWatchMarketChildTabBinding, BaseViewModel>() {
+class WatchMarketChildTabFragment :
+    BaseFragment<FragmentWatchMarketChildTabBinding, BaseViewModel>() {
 
 
     override val viewModel: WatchMarketChildTabViewModel by viewModels()
@@ -39,15 +36,8 @@ class WatchMaketChildTabFragment : BaseFragment<FragmentWatchMarketChildTabBindi
 
     override fun onBackFragment() {
 
-        findNavController().navigateUp()
-
     }
 
-    override fun onStart() {
-        super.onStart()
-        (requireActivity() as MainActivity).showBottomView()
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -66,7 +56,7 @@ class WatchMaketChildTabFragment : BaseFragment<FragmentWatchMarketChildTabBindi
         binding.apply {
             rvListWatchMarket.apply {
                 adapter = marketAdapter
-                layoutManager =LinearLayoutManager(context,RecyclerView.VERTICAL,false)
+                layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             }
         }
 
@@ -76,9 +66,10 @@ class WatchMaketChildTabFragment : BaseFragment<FragmentWatchMarketChildTabBindi
         )
         marketAdapter.setItemClickListener {
             val bundle = bundleOf("data" to it)
-            findNavController().navigate(R.id.detailWatchMarketFragment,bundle)
+            findNavController().navigate(R.id.detailWatchMarketFragment, bundle)
         }
     }
+
     private fun initPaging() {
         viewModel.getListWatchMarket()
         lifecycleScope.launch {
@@ -94,7 +85,6 @@ class WatchMaketChildTabFragment : BaseFragment<FragmentWatchMarketChildTabBindi
                 marketAdapter.loadStateFlow.distinctUntilChangedBy { it.refresh }
                     .filter { it.refresh is LoadState.NotLoading }
                     .collect { binding.rvListWatchMarket.scrollToPosition(0) }
-
 
 
             }

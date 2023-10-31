@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusable="true"
-    android:background="@color/bg_app_white">
+    >
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/navHostFragmentFirst"
