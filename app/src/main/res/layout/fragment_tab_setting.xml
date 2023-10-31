@@ -35,7 +35,7 @@
         android:gravity="center_vertical"
         android:layout_marginHorizontal="@dimen/space_start_end"
         android:background="@drawable/bg_linear_conner_radius_gray"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/color_tint_black"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
         <de.hdodenhof.circleimageview.CircleImageView
@@ -536,7 +536,7 @@
                     android:layout_centerVertical="true"
                     android:layout_width="@dimen/dimen17dp"
                     android:layout_height="@dimen/dimen17dp"
-                    android:src="@drawable/ic_language"/>
+                    android:src="@drawable/ic_setting_darkmode"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvTheme"
                     android:layout_toRightOf="@+id/ivTheme"

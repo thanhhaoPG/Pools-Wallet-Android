@@ -51,7 +51,7 @@
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:textAlignment="center"
                     android:textSize="14sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/color_text_black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Enter again your pin number to confirm"/>
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textSize="14sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/color_text_black"
                     android:text="(This pincode will unclock your Pools wallet only on this device)"/>
             </LinearLayout>
             <LinearLayout

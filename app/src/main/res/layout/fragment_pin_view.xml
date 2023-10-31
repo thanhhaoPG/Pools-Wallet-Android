@@ -37,7 +37,7 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="@dimen/dimen24dp"
                         android:layout_height="@dimen/dimen24dp"
-                        app:tint="@color/black"
+                        app:tint="@color/color_tint_black"
                         android:layout_gravity="center"
                         app:srcCompat="@drawable/baseline_keyboard_arrow_left_24" />
                 </FrameLayout>
@@ -52,7 +52,7 @@
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:textAlignment="center"
                     android:textSize="14sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/color_text_black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Put in your pin number"/>
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textSize="14sp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/color_text_black"
                     android:text="(This pincode will unclock your Pools wallet only on this device)"/>
             </LinearLayout>
             <LinearLayout

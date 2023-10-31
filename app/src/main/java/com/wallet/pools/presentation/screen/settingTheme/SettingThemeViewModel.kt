@@ -4,6 +4,7 @@ import android.app.UiModeManager
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
 import com.wallet.pools.base.BaseViewModel
+import com.wallet.pools.enum.TypeThemeApp
 import com.wallet.pools.util.CoroutineContextProvider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -19,9 +20,9 @@ class SettingThemeViewModel @Inject constructor(
     }
 
     private fun updateTheme(context: Context, theme: Int) {
-        if (theme == THEME_LIGHT) {
+        if (theme == TypeThemeApp.THEME_LIGHT.value) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-        } else if (theme == THEME_DARK) {
+        } else if (theme == TypeThemeApp.THEME_DARK.value) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         } else {
             val uiModeManager = context.getSystemService(Context.UI_MODE_SERVICE) as UiModeManager
@@ -34,10 +35,6 @@ class SettingThemeViewModel @Inject constructor(
         }
     }
 
-    companion object{
-        val  THEME_LIGHT = 0
-        val THEME_DARK = 1
-        val THEME_AUTO = 2
-    }
+
 
 }

@@ -3,6 +3,7 @@ package com.wallet.pools.data.local
 import android.content.Context
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
+import com.wallet.pools.enum.TypeThemeApp
 import javax.inject.Inject
 
 open class CachePreferencesHelper @Inject constructor(context: Context) {
@@ -11,6 +12,7 @@ open class CachePreferencesHelper @Inject constructor(context: Context) {
         private const val PREF_PACKAGE_NAME = " com.wallet.pools.preferences"
 
         private const val PREF_KEY_THE_FIRST_OPEN_APP = "the_first_open_app"
+        private const val PREF_KEY_THE_THEME_APP = "the_theme_app"
 
     }
 
@@ -33,4 +35,8 @@ open class CachePreferencesHelper @Inject constructor(context: Context) {
             .apply()
 
 
+    var themeAppCurrent: Int
+        get() = preferences.getInt(PREF_KEY_THE_THEME_APP, TypeThemeApp.THEME_AUTO.value)
+        set(isTheme) = preferences.edit().putInt(PREF_KEY_THE_THEME_APP, isTheme)
+            .apply()
 }

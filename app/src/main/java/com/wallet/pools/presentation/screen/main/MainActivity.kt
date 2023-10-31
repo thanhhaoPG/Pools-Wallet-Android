@@ -1,5 +1,6 @@
 package com.wallet.pools.presentation.screen.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
@@ -30,6 +31,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
 
     }
+
+
 
     fun hideBottomView() {
         binding.apply {
@@ -66,7 +69,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
             R.style.MyBottomNavigationTitleText
         binding.bottomNavigationViewMain.itemTextAppearanceActive =
             R.style.MyBottomNavigationTitleText
+
         binding.bottomNavigationViewMain.selectedItemId = R.id.wallet
+
 
 
     }

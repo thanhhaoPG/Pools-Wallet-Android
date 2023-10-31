@@ -10,6 +10,7 @@ import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentTabMarketBinding
 import com.wallet.pools.databinding.FragmentTabSettingBinding
 import com.wallet.pools.presentation.screen.main.MainActivity
+import com.wallet.pools.util.setSafeOnClickListener
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -49,7 +50,7 @@ class SettingFragment : BaseFragment<FragmentTabSettingBinding, BaseViewModel>()
 
     private fun initView() {
         binding.apply {
-            rltTheme.setOnClickListener {
+            rltTheme.setSafeOnClickListener {
                 findNavController().navigate(R.id.settingThemeFragment)
             }
         }

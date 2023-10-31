@@ -50,5 +50,6 @@
     <string name="str_sort_descending">DESCENDING</string>
     <string name="str_sort_asc">ASCENDING</string>
     <string name="str_market_cap">Market Cap</string>
+    <string name="str_select_mode">Select Mode</string>
 
 </resources>

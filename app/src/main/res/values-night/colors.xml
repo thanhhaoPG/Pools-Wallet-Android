@@ -9,7 +9,6 @@
     <color name="color_336BFE">#505071</color>
     <color name="color_06C270">#505071</color>
     <color name="color_app">#BCBCFF</color>
-    <color name="black">#ffffff</color>
     <color name="color_text_black">#ffffff</color>
     <color name="color_white_bg">#7272E4</color>
     <color name="color_bg_card_gray">#282C63</color>
@@ -26,5 +25,7 @@
 
     <color name="color_text_tab_layout_06C270">#B1B1B1</color>
     <color name="color_background_tab_layout">#BCBCFF</color>
+
+    <color name="color_tint_black">#ffffff</color>
 
 </resources>

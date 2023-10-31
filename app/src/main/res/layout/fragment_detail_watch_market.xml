@@ -29,7 +29,7 @@
                 android:layout_height="@dimen/dimen24dp"
                 android:layout_gravity="center"
                 app:srcCompat="@drawable/baseline_keyboard_arrow_left_24"
-                app:tint="@color/black" />
+                app:tint="@color/color_tint_black" />
         </FrameLayout>
 
         <LinearLayout
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dimen10dp"
-                android:textColor="@color/black"
+                android:textColor="@color/color_text_black"
                 android:textSize="@dimen/text_size_14"
                 tools:text="BTC" />
 
