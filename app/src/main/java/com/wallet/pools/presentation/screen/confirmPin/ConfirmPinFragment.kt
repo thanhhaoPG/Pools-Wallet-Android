@@ -2,9 +2,7 @@ package com.wallet.pools.presentation.screen.confirmPin
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import androidx.core.content.ContextCompat
+
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -14,7 +12,10 @@ import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentConfirmPinBinding
 import com.wallet.pools.extenstion.showToast
 import com.wallet.pools.presentation.screen.pin.PinViewModel
+import com.wallet.pools.presentation.widget.CustomPinView
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
+import java.util.Stack
 
 
 @AndroidEntryPoint
@@ -22,8 +23,6 @@ class ConfirmPinFragment : BaseFragment<FragmentConfirmPinBinding, BaseViewModel
 
 
     override val viewModel: PinViewModel by viewModels()
-    private lateinit var pinDisplays: ArrayList<ImageView>
-    private lateinit var pinButtons: ArrayList<Button>
     private val args : ConfirmPinFragmentArgs by navArgs()
     override fun getViewBinding(): FragmentConfirmPinBinding =
         FragmentConfirmPinBinding.inflate(layoutInflater)
@@ -49,70 +48,30 @@ class ConfirmPinFragment : BaseFragment<FragmentConfirmPinBinding, BaseViewModel
     }
 
     private fun initView() {
-        binding.frmBack.setOnClickListener {
-            onBackFragment()
-        }
-        pinDisplays = buildArray {
-            add(binding.pinDisplay1)
-            add(binding.pinDisplay2)
-            add(binding.pinDisplay3)
-            add(binding.pinDisplay4)
-            add(binding.pinDisplay5)
-            add(binding.pinDisplay6)
-        }
-
-        pinButtons = buildArray {
-            add(binding.pinKey0)
-            add(binding.pinKey1)
-            add(binding.pinKey2)
-            add(binding.pinKey3)
-            add(binding.pinKey4)
-            add(binding.pinKey5)
-            add(binding.pinKey6)
-            add(binding.pinKey7)
-            add(binding.pinKey8)
-            add(binding.pinKey9)
-            add(binding.pinKeyBack)
-        }
-
-        onListener()
-        observeViewModelData()
-    }
-
-    private fun observeViewModelData() {
-        viewModel.pinStack.observe(viewLifecycleOwner) {
-            for (idx in 0 until pinDisplays.size) {
-                pinDisplays[idx].setImageDrawable(
-                    ContextCompat.getDrawable(
-                        requireContext(),
-                        if (idx < it.size) R.drawable.pin_enter else R.drawable.pin_empty
-                    )
-                )
+        binding.apply {
+            customPinView.setTextPin("Confirm again  your pin number","(This pincode will unlock your Pools wallet only on this device)")
+            customPinView.showBiometric(false)
+            customPinView.setButtonBack {
+                onBackFragment()
             }
-
-            if (it.size == 6) {
-                if(args.pin == viewModel.pinStack.value!!.toString()){
-                   findNavController().navigate(R.id.textPhraseFragment)
-                }else {
-                    requireActivity().showToast("Nhập sai Vui lòng nhập lại ")
-                    viewModel.clearPin()
+            customPinView.setPinClickListener(object : CustomPinView.PinViewInterface{
+                override fun sendData(stack: Stack<Int>) {
+                    if(customPinView.enoughPin(stack)){
+                        if(args.pin == stack.toString()){
+                            findNavController().navigate(R.id.recoveryFragment)
+                        }else {
+                            requireActivity().showToast("Nhập sai Vui lòng nhập lại ")
+                            Timber.i("TTT sendData : $stack")
+                            customPinView.clearPin()
+                        }
+                    }
                 }
-            }
+
+            })
         }
     }
 
-    private fun onListener() {
-        for ((idx, view) in pinButtons.withIndex()) {
-            view.setOnClickListener {
-                viewModel.clickPin(idx)
-            }
-        }
-    }
-    private fun <V> buildArray(build: ArrayList<V>.() -> Unit): ArrayList<V> {
-        val arrayList = ArrayList<V>()
-        arrayList.build()
-        return arrayList
-    }
+
 
 
 }

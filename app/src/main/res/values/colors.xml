@@ -108,6 +108,10 @@
     <color name="color_chart_bottom_line_color">#EF5350</color>
 
 
+    <color name="color_06C270_enable">#06C270</color>
+    <color name="color_06C270_disable">#3363E3AB</color>
+
+
     <color name="color_btn_highlight_effect">#C3C1C1</color>
     <color name="color_btn_disable">#626262</color>
 

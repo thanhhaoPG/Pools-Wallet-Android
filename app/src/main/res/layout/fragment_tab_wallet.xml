@@ -76,9 +76,10 @@
                 app:tint="@color/color_tint_black"
                 android:src="@drawable/ic_receive"/>
             <com.wallet.pools.presentation.widget.TvRegular
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dimen55dp"
                 android:layout_height="wrap_content"
-                android:text="Receiver"
+                android:gravity="center_horizontal"
+                android:text="@string/receiver"
                 android:textColor="@color/color_text_black"
                 android:textSize="@dimen/text_size_12"/>
         </LinearLayout>
@@ -98,9 +99,10 @@
                 app:tint="@color/color_tint_black"
                 android:src="@drawable/ic_send"/>
             <com.wallet.pools.presentation.widget.TvRegular
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dimen55dp"
                 android:layout_height="wrap_content"
-                android:text="Send"
+                android:gravity="center_horizontal"
+                android:text="@string/send"
                 android:textColor="@color/color_text_black"
                 android:textSize="@dimen/text_size_12"/>
         </LinearLayout>
@@ -119,9 +121,10 @@
                 android:layout_height="@dimen/dimen25dp"
                 android:src="@drawable/ic_swap"/>
             <com.wallet.pools.presentation.widget.TvRegular
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dimen55dp"
                 android:layout_height="wrap_content"
-                android:text="Swap"
+                android:gravity="center_horizontal"
+                android:text="@string/swap"
                 android:textColor="@color/color_text_white"
                 android:textSize="@dimen/text_size_12"/>
         </LinearLayout>
@@ -140,9 +143,10 @@
                 android:layout_height="@dimen/dimen25dp"
                 android:src="@drawable/ic_scan"/>
             <com.wallet.pools.presentation.widget.TvRegular
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/dimen55dp"
+                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
-                android:text="Scan"
+                android:text="@string/scan"
                 android:textColor="@color/color_text_white"
                 android:textSize="@dimen/text_size_12"/>
         </LinearLayout>

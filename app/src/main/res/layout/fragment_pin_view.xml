@@ -6,6 +6,7 @@
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
     android:layout_height="match_parent">
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="2"
@@ -206,5 +207,10 @@
         </GridLayout>
 
     </LinearLayout>
+
+    <com.wallet.pools.presentation.widget.CustomPinView
+        android:id="@+id/customPinView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

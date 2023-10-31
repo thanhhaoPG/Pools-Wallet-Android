@@ -64,6 +64,7 @@
             android:text="WALLET NAME"
             android:id="@+id/tvTitleWalletName"/>
         <EditText
+            android:id="@+id/editTextName"
             android:layout_marginTop="@dimen/dimen10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -94,6 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <CheckBox
+                android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <com.wallet.pools.presentation.widget.TvSemiBold
@@ -106,7 +108,7 @@
                 android:id="@+id/tvTermAndPolicy"/>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/llCreatePin"
+            android:id="@+id/llNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen10dp"
@@ -116,7 +118,7 @@
             android:fontFamily="@font/poppins_semi_bold"
             android:textAllCaps="false"
             android:backgroundTint="@color/color_button_06C270"
-            android:background="@drawable/bg_linear_conner_radius"
+            android:background="@drawable/bg_btn_state_radius"
             android:layout_marginBottom="@dimen/dimen20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:orientation="horizontal" >
@@ -124,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:text="Create PIN Code "/>
+                android:text="@string/next"/>
         </LinearLayout>
 
     </LinearLayout>

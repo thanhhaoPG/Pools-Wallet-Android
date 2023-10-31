@@ -50,5 +50,9 @@
         android:id="@+id/textPhraseFragment"
         android:name="com.wallet.pools.presentation.screen.textPhraseFragment.TextPhraseFragment"
         android:label="TextPhraseFragment" />
+    <fragment
+        android:id="@+id/recoveryFragment"
+        android:name="com.wallet.pools.presentation.screen.recovery.RecoveryFragment"
+        android:label="RecoveryFragment" />
 </navigation>
 

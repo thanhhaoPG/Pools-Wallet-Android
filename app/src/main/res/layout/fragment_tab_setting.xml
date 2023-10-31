@@ -25,7 +25,7 @@
         android:layout_marginHorizontal="@dimen/space_start_end"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello! Account 1"
+        android:text="@string/hello_account_1"
         android:textColor="@color/color_text_black"/>
     <LinearLayout
         android:id="@+id/llReward"
@@ -43,9 +43,9 @@
             android:src="@drawable/gift"
             android:layout_height="@dimen/dimen32dp"/>
         <com.wallet.pools.presentation.widget.TvRegular
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Rewards"
+            android:text="@string/rewards"
             android:layout_weight="1"
             android:layout_marginStart="@dimen/dimen10dp"
             android:textColor="@color/color_336BFE"
@@ -93,14 +93,14 @@
                     android:src="@drawable/ic_wallet_list"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvWalletList"
-                    android:layout_toRightOf="@+id/ivWalletList"
+                    android:layout_toEndOf="@+id/ivWalletList"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Wallet List"/>
+                    android:text="@string/wallet_list"/>
                 <com.wallet.pools.presentation.widget.TvLight
                     android:id="@+id/tvSubWalletList"
                     android:layout_centerVertical="true"
@@ -109,8 +109,8 @@
                     android:layout_marginEnd="@dimen/dimen10dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/color_text_black"
-                    android:layout_toLeftOf="@id/ivAllowWalletList"
-                    android:text="Account1"/>
+                    android:layout_toStartOf="@id/ivAllowWalletList"
+                    android:text="@string/account1"/>
                 <ImageView
                     android:id="@+id/ivAllowWalletList"
                     android:layout_centerVertical="true"
@@ -139,14 +139,14 @@
                     android:src="@drawable/ic_wallet_list"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvRecipientList"
-                    android:layout_toRightOf="@+id/ivRecipientList"
+                    android:layout_toEndOf="@+id/ivRecipientList"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="RecipientList"/>
+                    android:text="@string/recipientList"/>
                 <ImageView
                     android:id="@+id/ivAllowRecipientList"
                     android:layout_centerVertical="true"
@@ -175,14 +175,14 @@
                     android:src="@drawable/ic_recovery_phrase"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvRecoveryPhrase"
-                    android:layout_toRightOf="@+id/ivRecoveryPhrase"
+                    android:layout_toEndOf="@+id/ivRecoveryPhrase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Recovery Phrase"/>
+                    android:text="@string/recovery_phrase"/>
                 <com.wallet.pools.presentation.widget.TvLight
                     android:id="@+id/tvSubRecoveryPhrase"
                     android:layout_centerVertical="true"
@@ -191,8 +191,8 @@
                     android:textSize="@dimen/text_size_12"
                     android:layout_marginEnd="@dimen/dimen10dp"
                     android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@id/ivAllowRecoveryPhrase"
-                    android:text="Backup"/>
+                    android:layout_toStartOf="@id/ivAllowRecoveryPhrase"
+                    android:text="@string/backup"/>
                 <ImageView
                     android:id="@+id/ivAllowRecoveryPhrase"
                     android:layout_centerVertical="true"
@@ -221,14 +221,14 @@
                     android:src="@drawable/ic_asset_management"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvAssetManage"
-                    android:layout_toRightOf="@+id/ivAssetManage"
+                    android:layout_toEndOf="@+id/ivAssetManage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Asset Management"/>
+                    android:text="@string/asset_management"/>
             </RelativeLayout>
             <View
                 android:layout_marginHorizontal="@dimen/dimen10dp"
@@ -250,14 +250,14 @@
                     android:src="@drawable/ic_referral"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvReferral"
-                    android:layout_toRightOf="@+id/ivReferral"
+                    android:layout_toEndOf="@+id/ivReferral"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Referral"/>
+                    android:text="@string/referral"/>
 
             </RelativeLayout>
 
@@ -298,14 +298,14 @@
                 android:src="@drawable/ic_change_network"/>
             <com.wallet.pools.presentation.widget.TvRegular
                 android:id="@+id/tvChangeNetWork"
-                android:layout_toRightOf="@+id/ivChangeNetWork"
+                android:layout_toEndOf="@+id/ivChangeNetWork"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dimen10dp"
                 android:textSize="@dimen/text_size_14"
                 android:textColor="@color/color_text_black"
-                android:text="Change NetWork"/>
+                android:text="@string/change_network"/>
             <com.wallet.pools.presentation.widget.TvLight
                 android:id="@+id/tvSubChangeNetWork"
                 android:layout_centerVertical="true"
@@ -314,8 +314,8 @@
                 android:layout_marginEnd="@dimen/dimen10dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/color_text_black"
-                android:layout_toLeftOf="@id/ivAllowChangeNetWork"
-                android:text="POOLS Chain"/>
+                android:layout_toStartOf="@id/ivAllowChangeNetWork"
+                android:text="@string/pools_chain"/>
             <ImageView
                 android:id="@+id/ivAllowChangeNetWork"
                 android:layout_centerVertical="true"
@@ -362,14 +362,14 @@
                     android:src="@drawable/ic_recovery_sercutiy"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvRecoveryPhrase1"
-                    android:layout_toRightOf="@+id/ivSecurityPrivacy"
+                    android:layout_toEndOf="@+id/ivSecurityPrivacy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Recovery Phrase"/>
+                    android:text="@string/recovery_phrase_setting"/>
                 <com.wallet.pools.presentation.widget.TvLight
                     android:id="@+id/tvSubRecoveryPhrase1"
                     android:layout_centerVertical="true"
@@ -378,8 +378,8 @@
                     android:layout_marginEnd="@dimen/dimen10dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/color_text_06C270"
-                    android:layout_toLeftOf="@id/ivAllowRecoveryPhrase1"
-                    android:text="Backup"/>
+                    android:layout_toStartOf="@id/ivAllowRecoveryPhrase1"
+                    android:text="@string/backupSetting"/>
                 <ImageView
                     android:id="@+id/ivAllowRecoveryPhrase1"
                     android:layout_centerVertical="true"
@@ -408,14 +408,14 @@
                     android:src="@drawable/ic_delete"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvDeleteWallet"
-                    android:layout_toRightOf="@+id/ivDeleteWallet"
+                    android:layout_toEndOf="@+id/ivDeleteWallet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Delete Wallet"/>
+                    android:text="@string/delete_wallet"/>
 
             </RelativeLayout>
         </LinearLayout>
@@ -430,7 +430,7 @@
         android:layout_marginHorizontal="@dimen/space_start_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OTHER"/>
+        android:text="@string/other"/>
     <androidx.cardview.widget.CardView
         android:id="@+id/cardOther"
         app:layout_constraintTop_toBottomOf="@+id/tvOther"
@@ -457,14 +457,14 @@
                     android:src="@drawable/ic_language"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvLanguage"
-                    android:layout_toRightOf="@+id/ivLanguage"
+                    android:layout_toEndOf="@+id/ivLanguage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Languge"/>
+                    android:text="@string/language"/>
                 <com.wallet.pools.presentation.widget.TvLight
                     android:id="@+id/tvSubLanguage"
                     android:layout_centerVertical="true"
@@ -473,8 +473,8 @@
                     android:layout_marginEnd="@dimen/dimen10dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/color_text_black"
-                    android:layout_toLeftOf="@id/ivAllowLanguage"
-                    android:text="Tiếng Việt"/>
+                    android:layout_toStartOf="@id/ivAllowLanguage"
+                    android:text="@string/ti_ng_vi_t"/>
                 <ImageView
                     android:id="@+id/ivAllowLanguage"
                     android:layout_centerVertical="true"
@@ -503,14 +503,14 @@
                     android:src="@drawable/ic_assistant"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvAssistant"
-                    android:layout_toRightOf="@+id/ivAssistant"
+                    android:layout_toEndOf="@+id/ivAssistant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Pools Vitual Assistant"/>
+                    android:text="@string/pools_vitual_assistant"/>
 
                 <com.google.android.material.switchmaterial.SwitchMaterial
                     android:layout_width="wrap_content"
@@ -523,9 +523,11 @@
                 android:layout_marginHorizontal="@dimen/dimen10dp"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:visibility="gone"
                 android:background="@color/color_B0B0B0"
                 />
             <RelativeLayout
+                android:visibility="gone"
                 android:padding="@dimen/dimen5dp"
                 android:id="@+id/rltTheme"
                 android:layout_margin="@dimen/dimen10dp"
@@ -539,14 +541,14 @@
                     android:src="@drawable/ic_setting_darkmode"/>
                 <com.wallet.pools.presentation.widget.TvRegular
                     android:id="@+id/tvTheme"
-                    android:layout_toRightOf="@+id/ivTheme"
+                    android:layout_toEndOf="@+id/ivTheme"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dimen10dp"
                     android:textSize="@dimen/text_size_14"
                     android:textColor="@color/color_text_black"
-                    android:text="Theme"/>
+                    android:text="@string/theme"/>
                 <ImageView
                     android:id="@+id/ivAllowTheme"
                     android:layout_centerVertical="true"
@@ -592,14 +594,14 @@
                 android:src="@drawable/ic_info_wallet"/>
             <com.wallet.pools.presentation.widget.TvRegular
                 android:id="@+id/tvWalletInformation"
-                android:layout_toRightOf="@+id/ivWalletInformation"
+                android:layout_toEndOf="@+id/ivWalletInformation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="@dimen/dimen10dp"
                 android:textSize="@dimen/text_size_14"
                 android:textColor="@color/color_text_black"
-                android:text="Pools Wallet Information"/>
+                android:text="@string/pools_wallet_information_setting"/>
             <ImageView
                 android:id="@+id/ivAllowWalletInformation"
                 android:layout_centerVertical="true"
