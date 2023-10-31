@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!-- res/drawable/tab_background_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- Selected state -->
+<item android:state_selected="true">
+    <shape>
+        <solid android:color="@color/color_button_06C270" />
+        <corners android:radius="@dimen/dimen50dp" />
+    </shape>
+</item>
+<!-- Default state -->
+<item>
+    <shape>
+        <solid android:color="@android:color/transparent" />
+    </shape>
+</item>
+</selector>

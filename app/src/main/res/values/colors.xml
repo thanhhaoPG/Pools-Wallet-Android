@@ -116,4 +116,8 @@
     <color name="color_hint_text_9E9E9E">#9E9E9E</color>
 
 
+    <color name="color_text_tab_layout_06C270">#06C270</color>
+    <color name="color_background_tab_layout">#06C270</color>
+
+
 </resources>

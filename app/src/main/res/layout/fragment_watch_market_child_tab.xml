@@ -13,7 +13,7 @@
         android:background="@drawable/bg_search_corner_50"
         android:id="@+id/llSearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dimen50dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingHorizontal="@dimen/space_start_end"

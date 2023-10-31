@@ -24,4 +24,7 @@
     <color name="color_hint_text_9E9E9E">#B1B1B1</color>
     <color name="color_card_E0E0E0">#BCBCFF</color>
 
+    <color name="color_text_tab_layout_06C270">#B1B1B1</color>
+    <color name="color_background_tab_layout">#BCBCFF</color>
+
 </resources>

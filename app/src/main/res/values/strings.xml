@@ -49,5 +49,6 @@
     <string name="hint_search_for_tokens">Search for tokens...</string>
     <string name="str_sort_descending">DESCENDING</string>
     <string name="str_sort_asc">ASCENDING</string>
+    <string name="str_market_cap">Market Cap</string>
 
 </resources>

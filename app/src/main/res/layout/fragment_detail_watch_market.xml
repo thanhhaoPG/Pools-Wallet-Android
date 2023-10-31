@@ -331,7 +331,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Market Cap"
+                android:text="@string/str_market_cap"
                 android:textColor="@color/color_text_484848"
                 android:textSize="@dimen/text_size_10" />
 
@@ -351,16 +351,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/space_start_end"
         android:background="@drawable/bg_btn_corner_15"
-        android:fontFamily="@font/poppins_semi_bold"
         android:gravity="center"
-        android:orientation="horizontal"
         android:padding="@dimen/dimen15dp"
-        android:textAllCaps="false"
-        android:textSize="@dimen/text_size_16"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <com.wallet.pools.presentation.widget.TvSemiBold
             android:id="@+id/tvBuy"
+            android:textSize="@dimen/text_size_16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
