@@ -32,8 +32,11 @@
 
         <com.wallet.pools.presentation.widget.TvSemiBold
             android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_start_end_of_title"
+            android:textAlignment="center"
+            android:maxLines="2"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="Swap"

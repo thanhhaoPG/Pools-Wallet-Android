@@ -172,6 +172,8 @@
     <dimen name="toggle_icon_height">24dp</dimen>
     <dimen name="space_start_end">15dp</dimen>
 
+    <dimen name="space_start_end_of_title">40dp</dimen>
+
     <dimen name="dimen69dp">69dp</dimen>
 
     <dimen name="dimen259dp">259dp</dimen>

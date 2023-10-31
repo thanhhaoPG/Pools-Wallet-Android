@@ -527,7 +527,6 @@
                 android:background="@color/color_B0B0B0"
                 />
             <RelativeLayout
-                android:visibility="gone"
                 android:padding="@dimen/dimen5dp"
                 android:id="@+id/rltTheme"
                 android:layout_margin="@dimen/dimen10dp"

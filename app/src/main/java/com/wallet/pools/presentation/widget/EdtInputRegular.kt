@@ -22,11 +22,8 @@ class EdtInputRegular(context: Context, attrs: AttributeSet? = null) :
         val customTypeface = ResourcesCompat.getFont(context, R.font.poppins_regular)
         typeface = customTypeface
 
-        setHintTextColor(ContextCompat.getColorStateList(context, R.color.color_text_8f8f8f))
-        ViewCompat.setBackgroundTintList(
-            this,
-            ContextCompat.getColorStateList(context, R.color.color_text_8f8f8f)
-        )
+        setHintTextColor(ContextCompat.getColorStateList(context, R.color.color_hint_text_8f8f8f))
+
     }
 
 

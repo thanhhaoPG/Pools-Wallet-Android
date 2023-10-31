@@ -92,5 +92,8 @@
     <string name="str_sort_asc">ASCENDING</string>
     <string name="str_market_cap">Market Cap</string>
     <string name="str_select_mode">Select Mode</string>
+    <string name="str_wallet_name">WALLET NAME</string>
+    <string name="str_protect_your_wallet">PROTECT YOUR WALLET</string>
+    <string name="str_add_one_more_security">Add one more security layer to protect your crypto assets</string>
 
 </resources>

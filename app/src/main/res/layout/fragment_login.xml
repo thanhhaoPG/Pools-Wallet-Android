@@ -40,8 +40,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tvImportWallet"
         android:layout_width="match_parent"
         android:layout_marginHorizontal="@dimen/dimen40dp"
-        android:background="@drawable/bg_linear_conner_radius"
-        android:backgroundTint="@color/color_button_06C270"
+        android:background="@drawable/bg_btn_corner_50"
         android:gravity="center"
         android:padding="@dimen/dimen10dp"
         android:layout_height="wrap_content">

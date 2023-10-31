@@ -27,5 +27,8 @@
     <color name="color_background_tab_layout">#BCBCFF</color>
 
     <color name="color_tint_black">#ffffff</color>
+    <color name="color_hint_text_8f8f8f">#FFFFFF</color>
 
+    <color name="color_stroke_edt">#F5F5F5</color>
+    <color name="color_solid_edt">#00F5F5F5</color>
 </resources>

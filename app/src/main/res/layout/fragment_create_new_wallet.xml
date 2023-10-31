@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <RelativeLayout
-        android:layout_marginEnd="@dimen/space_start_end"
         android:id="@+id/rltTop"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:gravity="center_vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginEnd="@dimen/space_start_end"
+        android:gravity="center_vertical">
 
         <FrameLayout
             android:id="@+id/frmBack"
@@ -19,116 +18,126 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
             android:paddingHorizontal="@dimen/space_start_end">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="@dimen/dimen24dp"
                 android:layout_height="@dimen/dimen24dp"
                 android:layout_gravity="center"
-                app:tint="@color/color_tint_black"
-                app:srcCompat="@drawable/baseline_keyboard_arrow_left_24" />
+                app:srcCompat="@drawable/baseline_keyboard_arrow_left_24"
+                app:tint="@color/color_tint_black" />
         </FrameLayout>
 
 
         <com.wallet.pools.presentation.widget.TvSemiBold
             android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:layout_marginHorizontal="@dimen/space_start_end_of_title"
+            android:maxLines="2"
             android:text="@string/create_a_new_wallet"
+            android:textAlignment="center"
+
             android:textColor="@color/color_text_2d2d2d"
-            android:textSize="@dimen/text_size_16"
-            />
+            android:textSize="@dimen/text_size_16" />
+
         <ImageView
             android:id="@+id/ivScanQR"
             android:layout_width="@dimen/dimen25dp"
             android:layout_height="@dimen/dimen25dp"
-            android:layout_gravity="center"
-            app:tint="@color/color_tint_black"
-            android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            app:srcCompat="@drawable/ic_scan_black" />
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/ic_scan_black"
+            app:tint="@color/color_tint_black" />
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/space_start_end"
-        app:layout_constraintTop_toBottomOf="@id/rltTop"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
+
         <com.wallet.pools.presentation.widget.TvRegular
-            android:textColor="@color/color_text_525252"
+            android:id="@+id/tvTitleWalletName"
             android:layout_width="wrap_content"
-            android:textSize="@dimen/text_size_16"
             android:layout_height="wrap_content"
-            android:text="WALLET NAME"
-            android:id="@+id/tvTitleWalletName"/>
-        <EditText
+            android:text="@string/str_wallet_name"
+            android:textColor="@color/color_text_525252"
+            android:textSize="@dimen/text_size_16" />
+
+        <com.wallet.pools.presentation.widget.EdtInputRegular
             android:id="@+id/editTextName"
-            android:layout_marginTop="@dimen/dimen10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:background="@drawable/bg_edt_corner_5"
             android:hint='@string/text1'
-            android:textColor="@color/color_text_black"
-            android:background="@drawable/bg_linear_conner_radius_gray"
-            android:backgroundTint="@color/color_CFCFCF"/>
+            android:padding="@dimen/dimen10dp"
+            android:textColor="@color/color_text_black" />
+
         <com.wallet.pools.presentation.widget.TvRegular
-            android:textColor="@color/color_text_525252"
+            android:id="@+id/tvTitleProtect"
             android:layout_width="wrap_content"
-            android:layout_marginTop="@dimen/dimen10dp"
-            android:textSize="@dimen/text_size_16"
             android:layout_height="wrap_content"
-            android:text="PROTECT YOUR WALLET"
-            android:id="@+id/tvTitleProtect"/>
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:text="@string/str_protect_your_wallet"
+            android:textColor="@color/color_text_525252"
+            android:textSize="@dimen/text_size_16" />
+
         <com.wallet.pools.presentation.widget.TvLight
-            android:textColor="@color/color_text_525252"
+            android:id="@+id/tvSubTitleProtect"
             android:layout_width="wrap_content"
-            android:layout_marginTop="@dimen/dimen10dp"
-            android:textSize="@dimen/text_size_12"
             android:layout_height="wrap_content"
-            android:text="Add one more security layer to protect your crypto assets"
-            android:id="@+id/tvSubTitleProtect"/>
+            android:layout_marginTop="@dimen/dimen10dp"
+            android:text="@string/str_add_one_more_security"
+            android:textColor="@color/color_text_525252"
+            android:textSize="@dimen/text_size_12" />
+
         <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
+
             <com.wallet.pools.presentation.widget.TvSemiBold
-                android:textColor="@color/color_text_black"
-                android:gravity="center_vertical"
+                android:id="@+id/tvTermAndPolicy"
                 android:layout_width="match_parent"
-                android:textSize="@dimen/text_size_12"
                 android:layout_height="wrap_content"
+                android:gravity="center_vertical"
                 android:text="@string/i_have_read_and_agree_to_the_term_of_service_and_privacy_policy"
-                android:id="@+id/tvTermAndPolicy"/>
+                android:textColor="@color/color_text_black"
+                android:textSize="@dimen/text_size_12" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/llNext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dimen10dp"
             android:layout_marginTop="@dimen/text_size_10"
-            android:textSize="@dimen/text_size_16"
-            android:gravity="center"
-            android:fontFamily="@font/poppins_semi_bold"
-            android:textAllCaps="false"
-            android:backgroundTint="@color/color_button_06C270"
-            android:background="@drawable/bg_btn_state_radius"
             android:layout_marginBottom="@dimen/dimen20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:orientation="horizontal" >
+            android:background="@drawable/bg_btn_corner_50"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen10dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
             <com.wallet.pools.presentation.widget.TvSemiBold
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/next"
                 android:textColor="@color/white"
-                android:text="@string/next"/>
+                android:textSize="@dimen/text_size_16" />
         </LinearLayout>
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

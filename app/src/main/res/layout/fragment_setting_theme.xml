@@ -34,8 +34,11 @@
 
         <com.wallet.pools.presentation.widget.TvSemiBold
             android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_start_end_of_title"
+            android:textAlignment="center"
+            android:maxLines="2"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/str_select_mode"
@@ -46,102 +49,94 @@
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/layout"
+    <RadioGroup
+        android:layout_marginTop="@dimen/space_start_end"
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_start_end"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal">
 
-        <RadioGroup
-            android:id="@+id/radio_group"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/layout_theme_light"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/layout_theme_light"
-                android:layout_width="0dp"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:src="@drawable/ic_theme_light" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_theme_light" />
-
-                <com.wallet.pools.presentation.widget.TvRegular
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen5dp"
-                    android:text="@string/white"
-                    android:textSize="@dimen/text_size_14" />
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/radio_theme_light"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_theme_dark"
-                android:layout_width="0dp"
+            <com.wallet.pools.presentation.widget.TvRegular
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:layout_marginTop="@dimen/dimen5dp"
+                android:text="@string/white"
+                android:textSize="@dimen/text_size_14" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_theme_dark" />
-
-                <com.wallet.pools.presentation.widget.TvRegular
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen5dp"
-                    android:text="@string/black"
-                    android:textSize="@dimen/text_size_14" />
-
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/radio_theme_dark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/layout_theme_auto"
-                android:layout_width="0dp"
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_theme_light"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:clickable="false" />
+        </LinearLayout>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_theme_auto" />
+        <LinearLayout
+            android:id="@+id/layout_theme_dark"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-                <com.wallet.pools.presentation.widget.TvRegular
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen5dp"
-                    android:text="@string/auto"
-                    android:textSize="@dimen/text_size_14" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_theme_dark" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/radio_theme_auto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false" />
-            </LinearLayout>
+            <com.wallet.pools.presentation.widget.TvRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5dp"
+                android:text="@string/black"
+                android:textSize="@dimen/text_size_14" />
 
-        </RadioGroup>
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_theme_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false" />
+        </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_theme_auto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_theme_auto" />
+
+            <com.wallet.pools.presentation.widget.TvRegular
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen5dp"
+                android:text="@string/auto"
+                android:textSize="@dimen/text_size_14" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/radio_theme_auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false" />
+        </LinearLayout>
+
+    </RadioGroup>
+
 </LinearLayout>
