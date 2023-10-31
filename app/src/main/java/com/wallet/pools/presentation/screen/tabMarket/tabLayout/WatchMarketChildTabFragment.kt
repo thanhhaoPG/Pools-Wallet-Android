@@ -131,11 +131,19 @@ class WatchMarketChildTabFragment :
                     binding.rootWatchMarket.viewTreeObserver.removeOnGlobalLayoutListener(listenerKeyboard) // need remove listener keyboard before navigation
                     val bundle = bundleOf("data" to it)
                     findNavController().navigate(R.id.detailWatchMarketFragment, bundle)
+
                 }
             }
             ivClearText.setSafeOnClickListener {
                 edtSearchToken.setText("")
 
+            }
+            edtSearchToken.setOnFocusChangeListener { _, hasFocus ->
+                if(hasFocus){
+                    binding.rootWatchMarket.viewTreeObserver.removeOnGlobalLayoutListener(listenerKeyboard) // need remove listener keyboard before navigation
+                    binding.rootWatchMarket.viewTreeObserver.addOnGlobalLayoutListener (listenerKeyboard)
+
+                }
             }
 
             edtSearchToken.setOnEditorActionListener { _, actionId, _ ->
