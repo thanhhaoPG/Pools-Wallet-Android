@@ -12,9 +12,9 @@ class MarketViewPaperAdapter(
     private var childFragment: Array<Fragment>
 
     init {
-        val introChildFragment1 = WatchMaketChildTabFragment()
+        val introChildFragment1 = WatchMarketChildTabFragment()
 
-        val introChildFragment2 = NewChildTabFragment()
+        val introChildFragment2 = NewsChildTabFragment()
 
 
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:gravity="center"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,52 +9,67 @@
     android:layout_marginHorizontal="@dimen/space_start_end"
     android:layout_height="wrap_content">
     <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginEnd="@dimen/dimen10dp"
+        tools:src="@mipmap/ic_launcher"
         android:layout_width="@dimen/dimen35dp"
         android:id="@+id/cIvIcon"
-        android:layout_marginHorizontal="@dimen/dimen10dp"
         android:layout_height="@dimen/dimen35dp"/>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
         <com.wallet.pools.presentation.widget.TvRegular
-            android:id="@+id/tvNameWallet"
+            android:id="@+id/tvSymbolWallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="MATIC"
+            android:maxLines="1"
             android:textSize="@dimen/text_size_16"
             android:textColor="@color/color_text_343434"/>
         <com.wallet.pools.presentation.widget.TvLight
-            android:id="@+id/tvTypeWallet"
+            android:id="@+id/tvNameWallet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Palygon"
-            android:layout_below="@+id/tvNameWallet"
+            android:maxLines="1"
+            app:autoSizeMaxTextSize="@dimen/text_size_12"
+            app:autoSizeMinTextSize="@dimen/text_size_8"
+            app:autoSizeTextType="uniform"
+            android:ellipsize="end"
             android:textSize="@dimen/text_size_12"
             android:textColor="@color/color_text_757575"/>
-        <ImageView
-            android:id="@+id/ivChart"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen50dp"
-            android:scaleType="centerCrop"
-            android:layout_marginHorizontal="@dimen/space_start_end"
-            android:layout_toEndOf="@+id/tvNameWallet"
-            android:layout_toStartOf="@+id/tvCountPoint"/>
+    </LinearLayout>
+    <ImageView
+        android:paddingVertical="@dimen/dimen2dp"
+        android:id="@+id/ivChart"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="@dimen/dimen50dp"
+        android:paddingHorizontal="@dimen/dimen10dp" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical|end">
         <com.wallet.pools.presentation.widget.TvRegular
             android:id="@+id/tvCountPoint"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="MATIC"
-            android:layout_alignParentEnd="true"
+            tools:text="34,343.222"
+            android:maxLines="1"
             android:textSize="@dimen/text_size_16"
             android:textColor="@color/color_text_212121"/>
         <com.wallet.pools.presentation.widget.TvLight
             android:id="@+id/tvCountMoney"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Polygon"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/tvCountPoint"
+            tools:text="12,10%"
+            android:maxLines="1"
             android:textSize="@dimen/text_size_12"
             android:textColor="@color/color_text_9E9E9E"/>
-    </RelativeLayout>
+    </LinearLayout>
+
 </LinearLayout>

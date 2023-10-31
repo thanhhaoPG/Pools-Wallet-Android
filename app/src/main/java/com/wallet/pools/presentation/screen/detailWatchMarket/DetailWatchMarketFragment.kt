@@ -1,4 +1,5 @@
 package com.wallet.pools.presentation.screen.detailWatchMarket
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.graphics.ColorSpace.Rgb
 import android.os.Bundle
@@ -31,6 +32,7 @@ import com.wallet.pools.base.BaseViewModel
 import com.wallet.pools.databinding.FragmentDetailWatchMarketBinding
 
 import com.wallet.pools.domain.model.DataChart
+import com.wallet.pools.extenstion.formatDoubleWithCommas
 import com.wallet.pools.presentation.screen.main.MainActivity
 
 import dagger.hilt.android.AndroidEntryPoint
@@ -66,51 +68,49 @@ class DetailWatchMarketFragment : BaseFragment<FragmentDetailWatchMarketBinding,
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView()
         initViewStateChange()
+        initView()
     }
 
 
     private fun initViewStateChange() {
         viewModel.getDataChartState.mapNotNull { it }.onEach(this::onViewStateTipFavoriteChange)
             .launchIn(lifecycleScope)
-        args.data.id?.let { viewModel.getDataChart(it) }
+        args.data.id.let { viewModel.getDataChart(it) }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initView() {
         binding.apply {
-           Glide.with(requireContext()).load(args.data.icon).into(ivIcon)
-            tvNameCoin.text = args.data.name
-            tvSymbolCoin.text = args.data.symbol
-            tvPrice.text = args.data.quote!!.price.toString()
-//            tv1Hours.text = args.data.quote!!.percentChange1h.toString()
-//            tv24Hours.text = args.data.quote!!.percentChange24h.toString()
-//            tv7days.text = args.data.quote!!.percentChange7d.toString()
-//            tv30days.text = args.data.quote!!.percentChange30d.toString()
-//            tv60days.text = args.data.quote!!.percentChange60d.toString()
-//            tv90days.text = args.data.quote!!.percentChange90d.toString()
-//            tvVolumeChange24.text = args.data.quote!!.volumeChange24h!!.toInt().toString()
-//            tv24hVol.text = args.data.quote!!.volume24h!!.toInt().toString()
-//            tvMarketCap.text = args.data.quote!!.marketCap!!.toInt().toString()
-            checkColorText(args.data.quote!!.percentChange1h!!,tv1Hours)
-            checkColorText(args.data.quote!!.percentChange24h!!,tv24Hours)
-            checkColorText(args.data.quote!!.percentChange7d!!,tv7days)
-            checkColorText(args.data.quote!!.percentChange30d!!,tv30days)
-            checkColorText(args.data.quote!!.percentChange60d!!,tv60days)
-            checkColorText(args.data.quote!!.percentChange90d!!,tv90days)
-            checkColorText(args.data.quote!!.volumeChange24h!!,tvVolumeChange24)
-            checkColorText(args.data.quote!!.volume24h!!,tv24hVol)
-            checkColorText(args.data.quote!!.marketCap!!,tvMarketCap)
-            checkColorText(args.data.quote!!.percentChange7d!!,tv1WeekTitle)
+            val dataArgs=args.data
+           Glide.with(requireContext()).load(dataArgs.icon).into(ivIcon)
+            tvNameCoin.text = dataArgs.name
+            tvSymbolCoin.text = dataArgs.symbol
+            tvPrice.text =formatDoubleWithCommas(dataArgs.quote.price)
+
+            checkColorText(dataArgs.quote.percentChange7d,tv1WeekTitle)
+            checkColorText(dataArgs.quote.percentChange1h,tv1Hours)
+            checkColorText(dataArgs.quote.percentChange24h,tv24Hours)
+            checkColorText(dataArgs.quote.percentChange7d,tv7days)
+            checkColorText(dataArgs.quote.percentChange30d,tv30days)
+            checkColorText(dataArgs.quote.percentChange60d,tv60days)
+            checkColorText(dataArgs.quote.percentChange90d,tv90days)
+
+            tvVolumeChange24.text="${formatDoubleWithCommas(dataArgs.quote.volumeChange24h)}$"
+            tv24hVol.text="${formatDoubleWithCommas(dataArgs.quote.volume24h)}$"
+            tvMarketCap.text="${formatDoubleWithCommas(dataArgs.quote.marketCap)}$"
+
+
+
              frmBack.setOnClickListener {
                  onBackFragment()
              }
-            val textBuy =  "Buy ${args.data.name}"
+            val textBuy =  "Buy ${dataArgs.symbol}"
             tvBuy.text = textBuy
             llBuy.setOnClickListener {
                 val bundle = bundleOf(
                     "nameTitle" to "",
-                    "linkURL" to "https://www.binance.com/en/trade/${args.data.symbol}_USDT?theme=dark&type=spot")
+                    "linkURL" to "https://www.binance.com/en/trade/${dataArgs.symbol}_USDT?theme=dark&type=spot")
                 findNavController().navigate(R.id.webViewFragment,bundle)
             }
         }
@@ -131,8 +131,9 @@ class DetailWatchMarketFragment : BaseFragment<FragmentDetailWatchMarketBinding,
         }
     }
 
-    private fun checkColorText(value : Double , textView: TextView){
-        textView.text = value.toString()
+    @SuppressLint("SetTextI18n")
+    private fun checkColorText(value : Double, textView: TextView){
+        textView.text = "$value%"
         if(value >= 0){
             textView.setTextColor(ContextCompat.getColor(requireContext(),R.color.color_06C270_unchanged))
         }else {

@@ -1,5 +1,6 @@
 package com.wallet.pools.presentation.screen.tabMarket.tabLayout
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
@@ -14,6 +15,8 @@ import com.bumptech.glide.Glide
 import com.wallet.pools.R
 import com.wallet.pools.databinding.ItemWatchMarketBinding
 import com.wallet.pools.domain.model.Daum
+import com.wallet.pools.extenstion.formatDoubleWithThreeDecimals
+import com.wallet.pools.extenstion.formatDoubleWithTwoDecimals
 import com.wallet.pools.lib.loadSVG.GlideToVectorYou
 import com.wallet.pools.lib.loadSVG.GlideToVectorYouListener
 import timber.log.Timber
@@ -33,14 +36,15 @@ class WatchMarketPagingAdapter @Inject constructor() :
 
     inner class WatchMarketViewHolder(private val binding: ItemWatchMarketBinding) :
         RecyclerView.ViewHolder(binding.root), Binder<Daum> {
+        @SuppressLint("SetTextI18n")
         override fun bind(item: Daum) {
             // Bind your data to the views in the ViewHolder
             binding.apply {
                 Glide.with(cIvIcon.context).load(item.icon).into(cIvIcon)
+                tvSymbolWallet.text = item.symbol
                 tvNameWallet.text = item.name
-                tvTypeWallet.text = item.symbol
-                tvCountPoint.text = item.quote!!.price!!.toInt().toString()
-                tvCountMoney.text = item.quote.percentChange1h.toString()
+                tvCountPoint.text = formatDoubleWithThreeDecimals(item.quote.price)
+                tvCountMoney.text = "${formatDoubleWithTwoDecimals(item.quote.percentChange7d)}%"
 
                 GlideToVectorYou
                     .init()
@@ -58,7 +62,7 @@ class WatchMarketPagingAdapter @Inject constructor() :
 
                                 val paint = Paint()
 
-                                if (item.quote.percentChange7d!! < 0) { //chart red
+                                if (item.quote.percentChange7d < 0) { //chart red
                                     paint.colorFilter = PorterDuffColorFilter(
                                         ContextCompat.getColor(
                                             root.context,
@@ -66,6 +70,12 @@ class WatchMarketPagingAdapter @Inject constructor() :
                                         ), PorterDuff.Mode.SRC_ATOP
                                     )
                                     ivChart.setLayerPaint(paint)
+                                    tvCountMoney.setTextColor(
+                                        ContextCompat.getColor(
+                                            root.context,
+                                            R.color.color_chart_red
+                                        )
+                                    )
                                 } else {// chart green
                                     paint.colorFilter = PorterDuffColorFilter(
                                         ContextCompat.getColor(
@@ -74,6 +84,12 @@ class WatchMarketPagingAdapter @Inject constructor() :
                                         ), PorterDuff.Mode.SRC_ATOP
                                     )
                                     ivChart.setLayerPaint(paint)
+                                    tvCountMoney.setTextColor(
+                                        ContextCompat.getColor(
+                                            root.context,
+                                            R.color.color_chart_green
+                                        )
+                                    )
                                 }
 
 

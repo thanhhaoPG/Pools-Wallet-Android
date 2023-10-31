@@ -8,12 +8,12 @@
     <string name="create_a_new_wallet">Create a new Wallet</string>
     <string name="text1">\@</string>
     <string name="volume_24_hour">Volume 24 hour</string>
-    <string name="string_90_days">90 days</string>
-    <string name="string_30_days">30 days</string>
-    <string name="string_24_hour">24 hour</string>
+    <string name="string_90_days">3 month</string>
+    <string name="string_30_days">1 month</string>
+    <string name="string_24_hour">1 day</string>
     <string name="string_market_cap">Market Cap</string>
-    <string name="string_60_days">60 days</string>
-    <string name="string_7_days">7 days</string>
+    <string name="string_60_days">2 month</string>
+    <string name="string_7_days">1 week</string>
     <string name="string_1_hour">1 hour</string>
     <string name="import_wallet">Import Wallet</string>
     <string name="all_in_one_dapp">All in one Dapp</string>
@@ -42,4 +42,6 @@
     <string name="retry">Retry</string>
     <string name="_24h_vol">24h Vol</string>
     <string name="volume_change_24h">Volume Change 24h</string>
+    <string name="tab_market_watch_market">Watch Market</string>
+    <string name="tab_market_news">News</string>
 </resources>
