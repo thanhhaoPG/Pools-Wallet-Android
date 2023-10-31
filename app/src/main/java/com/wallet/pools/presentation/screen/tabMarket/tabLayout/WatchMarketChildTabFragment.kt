@@ -2,6 +2,7 @@ package com.wallet.pools.presentation.screen.tabMarket.tabLayout
 
 import android.os.Bundle
 import android.view.View
+import android.view.ViewTreeObserver
 import android.view.inputmethod.EditorInfo
 import androidx.core.os.bundleOf
 import androidx.core.widget.doAfterTextChanged
@@ -51,6 +52,27 @@ class WatchMarketChildTabFragment :
     private var searchJob: Job? = null
     private var isKeyboardShowing = false
 
+    private val listenerKeyboard= ViewTreeObserver.OnGlobalLayoutListener { // detect to hide show bottomView when keyboard show
+        try {
+            Timber.i("addOnGlobalLayoutListener")
+            val heightDiff =
+                binding.rootWatchMarket.rootView.height -binding.rootWatchMarket.height
+            if (heightDiff > dpToPx(requireContext(), 200) && !isKeyboardShowing) {
+                // Keyboard is showing, adjust BottomNavigationView position
+                isKeyboardShowing = true
+                Timber.i("isKeyboardShowing = true")
+                (requireActivity() as MainActivity).hideBottomView()
+                //  binding.bottomNavigationViewMain.translationY = heightDiff.toFloat()
+            } else if (heightDiff < dpToPx(requireContext(), 200) && isKeyboardShowing) {
+                // Keyboard is hidden, reset BottomNavigationView position
+                isKeyboardShowing = false
+                Timber.i("isKeyboardShowing = false")
+                (requireActivity() as MainActivity).showBottomView()
+                // binding.bottomNavigationViewMain.translationY = 0f
+            }
+        } catch (_: Exception) {
+        }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -106,8 +128,7 @@ class WatchMarketChildTabFragment :
                 )
 
                 marketAdapter.setItemClickListener {
-                    requireActivity().hideKeyboard()
-
+                    binding.rootWatchMarket.viewTreeObserver.removeOnGlobalLayoutListener(listenerKeyboard) // need remove listener keyboard before navigation
                     val bundle = bundleOf("data" to it)
                     findNavController().navigate(R.id.detailWatchMarketFragment, bundle)
                 }
@@ -150,33 +171,15 @@ class WatchMarketChildTabFragment :
 
             rootWatchMarket.setOnClickListener { requireActivity().hideKeyboard() }
 
-            rootWatchMarket.viewTreeObserver.addOnGlobalLayoutListener {   // detect to hide show bottomView when keyboard show
-                try {
-                    Timber.i("addOnGlobalLayoutListener")
-                    val heightDiff =
-                        rootWatchMarket.rootView.height -rootWatchMarket.height
-                    if (heightDiff > dpToPx(requireContext(), 200) && !isKeyboardShowing) {
-                        // Keyboard is showing, adjust BottomNavigationView position
-                        isKeyboardShowing = true
-                        Timber.i("isKeyboardShowing = true")
-                        (requireActivity() as MainActivity).hideBottomView()
-                        //  binding.bottomNavigationViewMain.translationY = heightDiff.toFloat()
-                    } else if (heightDiff < dpToPx(requireContext(), 200) && isKeyboardShowing) {
-                        // Keyboard is hidden, reset BottomNavigationView position
-                        isKeyboardShowing = false
-                        Timber.i("isKeyboardShowing = false")
-                        (requireActivity() as MainActivity).showBottomView()
-                        // binding.bottomNavigationViewMain.translationY = 0f
-                    }
-                } catch (_: Exception) {
-                }
-            }
+            binding.rootWatchMarket.viewTreeObserver.addOnGlobalLayoutListener (listenerKeyboard)
+
 
 
         }
 
 
     }
+
 
     private fun performSearch() {
         marketAdapter.refresh()
@@ -205,6 +208,11 @@ class WatchMarketChildTabFragment :
 
         }
     }
+
+
+
+
+
 
 
 }

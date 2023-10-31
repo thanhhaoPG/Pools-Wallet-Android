@@ -25,15 +25,9 @@ class WalletChildTabFragment : BaseFragment<FragmentWalletChildTabBinding, BaseV
 
     override fun onBackFragment() {
 
-        requireActivity().finish()
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        (requireActivity() as MainActivity).showBottomView()
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

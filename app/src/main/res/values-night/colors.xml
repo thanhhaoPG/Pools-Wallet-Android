@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="color_status_bar">#0C0C18</color>
+    <color name="color_app_window_background">#0C0C18</color>
+
     <color name="color_button_06C270">#282C63</color>
     <color name="color_E6D6FF">#505071</color>
     <color name="color_FFD6AD">#505071</color>

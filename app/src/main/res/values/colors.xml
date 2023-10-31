@@ -3,6 +3,8 @@
 
     <color name="color_primary">#06C270</color>
     <color name="color_primary50">#8006C270</color>
+    <color name="color_status_bar">#ffffff</color>
+    <color name="color_app_window_background">#ffffff</color>
 
     <color name="color_">#ffffff</color>
 

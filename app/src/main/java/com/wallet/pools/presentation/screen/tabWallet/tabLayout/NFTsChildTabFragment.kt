@@ -10,8 +10,7 @@ import com.wallet.pools.databinding.FragmentWalletChildTabBinding
 import com.wallet.pools.presentation.screen.main.MainActivity
 import com.wallet.pools.presentation.screen.tabWallet.WalletViewModel
 import dagger.hilt.android.AndroidEntryPoint
-
-
+import timber.log.Timber
 
 
 @AndroidEntryPoint
@@ -26,15 +25,8 @@ class NFTsChildTabFragment : BaseFragment<FragmentNftsChildTabBinding, BaseViewM
 
     override fun onBackFragment() {
 
-        requireActivity().finish()
-
     }
 
-    override fun onStart() {
-        super.onStart()
-        (requireActivity() as MainActivity).showBottomView()
-
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
